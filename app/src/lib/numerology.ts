@@ -17,6 +17,8 @@ export interface NumberProfile {
   strengths: string[]
   challenges: string[]
   card: MajorArcana | null
+  /** Results-voice, surface-level sketch shown on the main page; the library keeps the deep layers */
+  surface: string
   /** Deeper layer: how this number tends to live out over a lifetime */
   detail: string
   /** Practical guidance for this number */
@@ -35,6 +37,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Leader',
     meaning:
       'Ones are pioneers. Independent, driven and original, you are here to learn self-reliance and to lead by example. Your path is about initiating — ideas, projects, movements — and trusting your own vision even when no one else sees it yet.',
+    surface:
+      'You are built to go first. Waiting for permission, consensus or perfect conditions costs you more than failure ever does — when you trust your own vision, things start moving, for you and usually for everyone behind you. The growth edge: letting others walk with you, and finishing what your fire starts.',
     strengths: ['Independence', 'Initiative', 'Originality', 'Courage'],
     challenges: ['Stubbornness', 'Impatience', 'Loneliness'],
     detail:
@@ -46,6 +50,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Diplomat',
     meaning:
       'Twos are the weavers of connection. Sensitive, intuitive and cooperative, your path is about partnership, patience and the quiet power of harmony. You succeed not by forcing outcomes but by reading the undercurrents and bringing people together.',
+    surface:
+      'You read people the way others read headlines — quickly, and mostly accurately. Harmony is your habitat; you mend rooms, translate between warring sides and sense tension before it speaks. Your gift is making cooperation feel like music. The growth edge: saying the disagreeable thing out loud, early.',
     strengths: ['Diplomacy', 'Intuition', 'Cooperation', 'Sensitivity'],
     challenges: ['Over-dependence', 'Conflict avoidance', 'Self-doubt'],
     detail:
@@ -57,6 +63,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Creator',
     meaning:
       'Threes are born to express. Joyful, artistic and socially magnetic, your path runs through creativity, communication and inspiration. Your gift is turning feeling into form — words, art, laughter — and reminding others that life is meant to be enjoyed.',
+    surface:
+      'You turn feeling into form — the joke that saves the meeting, the story that carries the truth, the thing you make that people did not know they needed. Expression is not your hobby; it is your maintenance. The growth edge: choosing one masterpiece over ten beginnings.',
     strengths: ['Creativity', 'Expression', 'Optimism', 'Charm'],
     challenges: ['Scattered energy', 'Superficiality', 'Emotional highs and lows'],
     detail:
@@ -68,6 +76,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Builder',
     meaning:
       'Fours are the architects of the material world. Practical, disciplined and fiercely loyal, your path is about creating structures that last — careers, families, institutions. You turn dreams into foundations, and your word is your bond.',
+    surface:
+      'You build what lasts. Systems, schedules, savings, structures — the floor everyone else dances on tends to have your fingerprints on it. People trust your word because it has never once been casual. The growth edge: letting the plan bend without calling it failure.',
     strengths: ['Discipline', 'Reliability', 'Practicality', 'Loyalty'],
     challenges: ['Rigidity', 'Workaholism', 'Resistance to change'],
     detail:
@@ -79,6 +89,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Freedom Seeker',
     meaning:
       'Fives are the travellers of the number line. Adventurous, adaptable and endlessly curious, your path is about freedom, experience and versatility. Routine is your enemy; growth lives at the edge of your comfort zone, and change is your true home.',
+    surface:
+      'You are the favourite child of change. Drop you anywhere — new city, new job, new crisis — and you land talking, adapting, collecting the experience like a souvenir. Freedom is your oxygen. The growth edge: one anchor, chosen freely, that you do not lift the moment it gets heavy.',
     strengths: ['Adaptability', 'Curiosity', 'Versatility', 'Persuasion'],
     challenges: ['Restlessness', 'Indulgence', 'Lack of follow-through'],
     detail:
@@ -90,6 +102,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Nurturer',
     meaning:
       'Sixes carry the heart of the community. Responsible, compassionate and beauty-loving, your path is about service, family and healing. You are the person others lean on — and your lesson is to give without losing yourself.',
+    surface:
+      'You are the person everyone calls. Birthdays remembered, feuds mediated, broken things quietly fixed — your love is active and practical, and your people know it. The growth edge: letting someone carry you once in a while, and learning that receiving is not debt.',
     strengths: ['Compassion', 'Responsibility', 'Healing', 'Aesthetic sense'],
     challenges: ['Perfectionism', 'Self-sacrifice', 'Taking on too much'],
     detail:
@@ -101,6 +115,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Seeker',
     meaning:
       'Sevens walk the inner road. Analytical, spiritual and deeply private, your path is about knowledge, reflection and the search for truth. You need solitude the way others need company, and your insight comes from asking the questions most people skip.',
+    surface:
+      'You ask the questions other people skip. Depth over chatter, evidence over noise, solitude over small talk — you would rather master one true thing than sample ten loud ones. Your insight is sharp and slow-cooked. The growth edge: deciding at eighty percent certainty and rejoining the world sooner.',
     strengths: ['Analytical mind', 'Spirituality', 'Depth', 'Perception'],
     challenges: ['Isolation', 'Skepticism', 'Overthinking'],
     detail:
@@ -112,6 +128,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Powerhouse',
     meaning:
       'Eights are built for the material world. Ambitious, efficient and commanding, your path is about mastery of power — money, authority, influence — and learning to wield it with integrity. Big vision plus big follow-through defines you.',
+    surface:
+      'You are built for scale. Big vision, bigger follow-through — you see systems whole and move resources without flinching, and you recover from blows that would retire others. Power is your instrument; integrity is how you tune it. The growth edge: the invisible ledgers — health, friendship, meaning — where ambition cannot measure what matters.',
     strengths: ['Ambition', 'Organisation', 'Resilience', 'Executive ability'],
     challenges: ['Control issues', 'Materialism', 'Work-life imbalance'],
     detail:
@@ -123,6 +141,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Humanitarian',
     meaning:
       'Nines are the old souls. Compassionate, wise and universal in outlook, your path is about completion, forgiveness and giving back. You feel the world’s pain as your own, and your calling is to turn that empathy into service.',
+    surface:
+      'You feel the world at full volume and answer it with compassion. Old beyond your years, allergic to petty tribalism, drawn to the big picture and the underdog — you end things well and give back as naturally as breathing. The growth edge: releasing what is finished, including your expectations of people.',
     strengths: ['Compassion', 'Wisdom', 'Artistic depth', 'Tolerance'],
     challenges: ['Martyrdom', 'Letting go', 'Disappointment in others'],
     detail:
@@ -134,6 +154,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Illuminator (Master Number)',
     meaning:
       'Eleven is intuition raised to an art form. Highly sensitive and spiritually charged, you are here to inspire and to channel insight that seems to come from beyond you. Your path demands you ground your visions, or the voltage will burn you out.',
+    surface:
+      'You run at a higher voltage than most. Insight arrives in you uninvited, rooms light up when you enter, and people are inspired by you before you have said a word. Sensitivity is your instrument, not your flaw. The growth edge: grounding — body, routine, rest — so the current has somewhere honest to go.',
     strengths: ['Intuition', 'Inspiration', 'Charisma', 'Spiritual insight'],
     challenges: ['Nervous tension', 'Overwhelm', 'Living up to your own light'],
     detail:
@@ -145,6 +167,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Master Builder (Master Number)',
     meaning:
       'Twenty-two combines the vision of 11 with the practicality of 4 — the most powerful of all numbers. You are here to build things that outlast you: movements, institutions, legacies. Your challenge is believing your own blueprint is worth building.',
+    surface:
+      'You are the dreamer who can pour concrete. Vision at the scale of legacy, plus the practicality to actually build it — you are not here for small plans, even when you pretend otherwise. The growth edge: starting the cathedral before you feel like a cathedral-builder; your competence arrives through the building.',
     strengths: ['Vision', 'Practical genius', 'Manifestation', 'Leadership'],
     challenges: ['Grandiosity', 'Pressure', 'Fear of your own scale'],
     detail:
@@ -156,6 +180,8 @@ export const NUMBER_PROFILES: Record<
     title: 'The Master Teacher (Master Number)',
     meaning:
       'Thirty-three is unconditional love made active. Rarer than rare, this path is about selfless service, healing and raising the consciousness of those around you — often by simply embodying compassion so fully that others remember their own.',
+    surface:
+      'You teach by being. Unconditional love, active and unglamorous — your presence lowers the temperature of a crisis and reminds people what they are capable of. Service is your nature. The growth edge: including yourself in the circle of people you care for. The temple needs walls, and you are the temple.',
     strengths: ['Selfless love', 'Healing', 'Teaching by example', 'Devotion'],
     challenges: ['Self-neglect', 'Emotional overload', 'Setting boundaries'],
     detail:

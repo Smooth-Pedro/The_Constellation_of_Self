@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { Separator } from '@/components/ui/separator'
 import TarotCardFace from '@/components/TarotCardFace'
 import { MAJOR_ARCANA, getCard } from '@/lib/tarot'
+import { SUITS, MINOR_ARCANA } from '@/lib/minorArcana'
 import { getJourneyMeeting } from '@/lib/journeyMeeting'
 import { getNumberProfile, MASTER_NOTES } from '@/lib/numerology'
 import { PAIR_PATHS, PAIR_DETAILS } from '@/lib/extendedNumerology'
@@ -282,6 +283,110 @@ export function PairsLibrary() {
             </article>
           )
         })}
+      </div>
+    </div>
+  )
+}
+
+/** ── The 56 Minor Arcana: four suits & every card (id anchors minor-cups-01 etc.) ── */
+export function MinorArcanaLibrary() {
+  return (
+    <div id="library-minor" className="scroll-mt-10">
+      <h3 className="font-cinzel text-2xl text-amber-100 text-center mb-2">The 56 Minor Arcana</h3>
+      <p className="text-indigo-300/60 text-xs italic text-center mb-8 max-w-2xl mx-auto">
+        Where the Majors are the great currents of a life, the Minors are the everyday weather —
+        four suits of fourteen cards each. Each suit is a full story from the Ace to the King;
+        each card below carries its meaning, its shadow and its practice.
+      </p>
+
+      <div className="space-y-14">
+        {SUITS.map((suit) => (
+          <div key={suit.suit} id={`minor-suit-${suit.suit.toLowerCase()}`} className="scroll-mt-16">
+            {/* Suit overview */}
+            <article className="rounded-3xl border border-amber-200/25 bg-amber-200/[0.04] backdrop-blur-sm p-6 sm:p-8 mb-6">
+              <div className="flex flex-col sm:flex-row items-center gap-5">
+                <div className="relative w-20 h-20 shrink-0 rounded-full border-2 border-amber-300/60 bg-amber-200/10 flex items-center justify-center shadow-[0_0_40px_-8px_rgba(251,191,36,0.5)]">
+                  <span className="text-3xl text-amber-100">{suit.glyph}</span>
+                </div>
+                <div className="flex-1 text-center sm:text-left">
+                  <h4 className="font-cinzel text-xl text-amber-100">
+                    Suit of {suit.suit}
+                    <span className="ml-2 text-amber-300/90 text-sm align-middle">
+                      ✦ {suit.element}
+                    </span>
+                  </h4>
+                  <p className="text-indigo-300/70 text-xs mt-1 tracking-wide">
+                    {suit.domain} · {suit.keywords.join(' · ')}
+                  </p>
+                  <p className="text-indigo-100/85 text-sm leading-relaxed mt-3">{suit.overview}</p>
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4 mt-5">
+                <div className="rounded-2xl border border-emerald-300/20 bg-emerald-400/5 p-4">
+                  <h5 className="text-emerald-200 font-cinzel text-xs tracking-widest uppercase mb-2">
+                    ✦ When the suit flows
+                  </h5>
+                  <p className="text-indigo-100/80 text-sm leading-relaxed">{suit.light}</p>
+                </div>
+                <div className="rounded-2xl border border-rose-300/20 bg-rose-400/5 p-4">
+                  <h5 className="text-rose-200 font-cinzel text-xs tracking-widest uppercase mb-2">
+                    ☾ When it floods or freezes
+                  </h5>
+                  <p className="text-indigo-100/80 text-sm leading-relaxed">{suit.shadow}</p>
+                </div>
+              </div>
+              <div className="mt-4 rounded-2xl border border-emerald-300/25 bg-emerald-400/[0.06] p-4">
+                <h5 className="font-cinzel text-emerald-200 text-xs tracking-[0.25em] uppercase mb-2">
+                  ✦ Working with this suit
+                </h5>
+                <p className="text-emerald-50/85 text-sm leading-relaxed">{suit.guidance}</p>
+              </div>
+            </article>
+
+            {/* The fourteen cards of the suit */}
+            <div className="grid gap-6 md:grid-cols-2">
+              {MINOR_ARCANA.filter((c) => c.suit === suit.suit).map((card) => (
+                <article
+                  key={card.id}
+                  id={`minor-${card.id}`}
+                  className="rounded-3xl border border-indigo-400/20 bg-white/[0.03] backdrop-blur-sm p-5 sm:p-6 scroll-mt-24"
+                >
+                  <div className="flex items-start gap-4">
+                    <a href={`#minor-${card.id}`} className="shrink-0 pt-1">
+                      <TarotCardFace card={card} size="sm" />
+                    </a>
+                    <div className="text-center sm:text-left min-w-0">
+                      <h4 className="font-cinzel text-lg text-amber-100 leading-tight">
+                        {card.name}
+                      </h4>
+                      <p className="text-indigo-300/70 text-xs mt-1 tracking-wide">
+                        {card.keywords.join(' · ')}
+                      </p>
+                      <p className="text-indigo-100/85 text-sm leading-relaxed mt-3">
+                        {card.meaning}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-indigo-200/70 text-sm leading-relaxed mt-4">{card.detail}</p>
+                  <div className="grid sm:grid-cols-2 gap-4 mt-4">
+                    <div className="rounded-2xl border border-rose-300/25 bg-rose-400/[0.07] p-4">
+                      <h5 className="font-cinzel text-rose-200 text-xs tracking-[0.25em] uppercase mb-2">
+                        ☾ Shadow side
+                      </h5>
+                      <p className="text-rose-100/90 text-sm leading-relaxed">{card.shadowDetail}</p>
+                    </div>
+                    <div className="rounded-2xl border border-emerald-300/25 bg-emerald-400/[0.06] p-4">
+                      <h5 className="font-cinzel text-emerald-200 text-xs tracking-[0.25em] uppercase mb-2">
+                        ✦ Working with this card
+                      </h5>
+                      <p className="text-emerald-50/85 text-sm leading-relaxed">{card.guidance}</p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )

@@ -148,7 +148,7 @@ export default function NameNumerologyPanel({ name }: Props) {
             <h5 className="font-cinzel text-indigo-200 text-xs tracking-[0.25em] uppercase mb-2">
               ⚡ The energy of {numbers.expression}
             </h5>
-            <p className="text-indigo-200/75 text-sm leading-relaxed">{profile.energy}</p>
+            <p className="text-indigo-200/75 text-sm leading-relaxed">{profile.surface}</p>
           </div>
           <p className="text-indigo-200/70 text-sm leading-relaxed">
             {DESTINY_DETAILS[numbers.expression] ?? DESTINY_DETAILS[baseOf(numbers.expression)]}
@@ -156,9 +156,15 @@ export default function NameNumerologyPanel({ name }: Props) {
           {numbers.expressionIsMaster && profile.masterNote && (
             <div className="rounded-2xl border border-amber-200/30 bg-amber-200/[0.06] p-4">
               <h5 className="font-cinzel text-amber-200 text-xs tracking-[0.25em] uppercase mb-2">
-                ✦ Why a master number shows up here
+                ✦ A master number runs through this name
               </h5>
-              <p className="text-amber-50/85 text-sm leading-relaxed">{profile.masterNote}</p>
+              <p className="text-amber-50/85 text-sm leading-relaxed">
+                Master numbers carry higher voltage — and higher demand. Why it appeared, and what
+                it asks of you, is its own reading:{' '}
+                <RefLink href={`#number-${numbers.expression}`}>
+                  the full entry on {numbers.expression} in the library ↓
+                </RefLink>
+              </p>
             </div>
           )}
           <p className="text-indigo-300/60 text-xs">
@@ -214,7 +220,7 @@ export default function NameNumerologyPanel({ name }: Props) {
                 <h5 className="font-cinzel text-indigo-200 text-xs tracking-[0.25em] uppercase mb-2">
                   ⚡ The energy it asks for
                 </h5>
-                <p className="text-indigo-200/75 text-sm leading-relaxed">{soulProfile.energy}</p>
+                <p className="text-indigo-200/75 text-sm leading-relaxed">{soulProfile.surface}</p>
               </div>
               <p className="text-indigo-200/70 text-sm leading-relaxed mt-3">
                 {SOUL_URGE_DETAILS[baseOf(numbers.soulUrge)]}
@@ -273,7 +279,7 @@ export default function NameNumerologyPanel({ name }: Props) {
                 <h5 className="font-cinzel text-indigo-200 text-xs tracking-[0.25em] uppercase mb-2">
                   ⚡ The energy it projects
                 </h5>
-                <p className="text-indigo-200/75 text-sm leading-relaxed">{persProfile.energy}</p>
+                <p className="text-indigo-200/75 text-sm leading-relaxed">{persProfile.surface}</p>
               </div>
               <p className="text-indigo-200/70 text-sm leading-relaxed mt-3">
                 {PERSONALITY_DETAILS[baseOf(numbers.personality)]}

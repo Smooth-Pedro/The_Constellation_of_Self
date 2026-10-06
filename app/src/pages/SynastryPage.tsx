@@ -100,6 +100,59 @@ function PersonFields({
   )
 }
 
+/** Circular score gauge for the combined synastry result */
+function ScoreRing({ score }: { score: number }) {
+  const r = 52
+  const c = 2 * Math.PI * r
+  return (
+    <div className="relative w-44 h-44 mx-auto">
+      <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
+        <defs>
+          <linearGradient id="syn-ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fcd34d" />
+            <stop offset="100%" stopColor="#f4b942" />
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r={r} fill="none" stroke="rgba(99,80,220,0.28)" strokeWidth="7" />
+        <circle
+          cx="60"
+          cy="60"
+          r={r}
+          fill="none"
+          stroke="url(#syn-ring-grad)"
+          strokeWidth="7"
+          strokeLinecap="round"
+          strokeDasharray={c}
+          strokeDashoffset={c * (1 - score / 100)}
+          className="transition-all duration-1000 ease-out"
+          style={{ filter: 'drop-shadow(0 0 6px rgba(244,185,66,0.5))' }}
+        />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="font-cinzel text-4xl text-amber-100">
+          {score}
+          <span className="text-lg text-amber-200/70">%</span>
+        </span>
+      </div>
+    </div>
+  )
+}
+
+/** A two-sentence human read of the bond, keyed to the score ranges of scoreLabel */
+function bondVerdict(score: number, bestTitle: string, watchTitle: string): string {
+  const best = bestTitle.charAt(0).toLowerCase() + bestTitle.slice(1)
+  const watch = watchTitle.charAt(0).toLowerCase() + watchTitle.slice(1)
+  if (score >= 85)
+    return `A rare alignment — the kind of chart that makes strangers assume you have known each other for years. ${best.charAt(0).toUpperCase() + best.slice(1)} is the engine of the bond, effortless and bright; even ${watch}, your most demanding layer, reads here as texture rather than obstacle. Guard it the way you would anything rare: with honesty and maintenance, not fear.`
+  if (score >= 70)
+    return `A strong bond with real weather in it. ${bestTitle} carries you — trust it and build on it. ${watch} is where the work lives: not a flaw in the match, but the curriculum it offers — and couples who tend that layer deliberately rarely feel it again.`
+  if (score >= 58)
+    return `Workable chemistry — the kind that grows on purpose rather than arriving finished. ${bestTitle} gives you solid common ground from the first day; ${watch} will ask for translation, patience and the occasional agree-to-disagree. What you make of the space between them is the relationship.`
+  if (score >= 45)
+    return `A growth partnership. This pairing is less about ease and more about what two people become in each other's company. ${bestTitle} still points to genuine, bankable connection — start there. Treat ${watch} not as a verdict but as the homework: named, it softens.`
+  return `A transformative dynamic — intense, and not for the faint of heart. Scores like this often mark the bonds that change people most. ${bestTitle} is your bridge; cross it often. ${watch} will test the bond's honesty — and what survives that test tends to be unbreakable.`
+}
+
 /** /synastry — compatibility across signs, cards, numbers and the full sky */
 export default function SynastryPage() {
   const [a, setA] = useState<PersonForm>(EMPTY_PERSON)
@@ -183,6 +236,18 @@ export default function SynastryPage() {
               <PersonFields id="p1" title="☉ The First" value={a} onChange={setA} />
               <PersonFields id="p2" title="☽ The Second" value={b} onChange={setB} />
             </div>
+            <div className="flex justify-center -mt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setA(b)
+                  setB(a)
+                }}
+                className="rounded-full border border-indigo-400/25 bg-indigo-950/40 px-4 py-1.5 text-xs text-indigo-300/70 transition-colors hover:border-amber-300/50 hover:text-amber-200"
+              >
+                ⇄ Swap the two
+              </button>
+            </div>
 
             <div className="space-y-2">
               <Label className="text-indigo-200/90 tracking-wide">What shall we compare?</Label>
@@ -226,27 +291,60 @@ export default function SynastryPage() {
 
       {result && (
         <main id="synastry-results" className="max-w-4xl mx-auto px-4 sm:px-6 pb-20 scroll-mt-10 animate-fade-in">
-          <div className="rounded-3xl border border-amber-200/30 bg-amber-200/[0.05] backdrop-blur-sm p-8 text-center">
-            <p className="font-cinzel text-sm tracking-[0.3em] uppercase text-indigo-300/70">
-              {result.nameA} ✦ {result.nameB}
-            </p>
-            <p className="font-cinzel text-6xl text-amber-100 mt-3">
-              {result.result.combined}
-              <span className="text-2xl text-amber-200/70">%</span>
-            </p>
-            <p className="text-amber-200/90 font-cinzel text-lg mt-1">{scoreLabel(result.result.combined)}</p>
-            <p className="text-indigo-300/60 text-xs mt-2">
-              The simple average of the {result.result.layers.length} layer
-              {result.result.layers.length === 1 ? '' : 's'} you selected — read them separately
-              below; each tells its own truth.
-            </p>
-          </div>
+          {(() => {
+            const layers = result.result.layers
+            const best = layers.reduce((m, l) => (l.score > m.score ? l : m), layers[0])
+            const watch = layers.reduce((m, l) => (l.score < m.score ? l : m), layers[0])
+            return (
+              <div className="rounded-3xl border border-amber-200/30 bg-amber-200/[0.05] backdrop-blur-sm p-8 text-center">
+                <p className="font-cinzel text-sm tracking-[0.3em] uppercase text-indigo-300/70">
+                  {result.nameA} ✦ {result.nameB}
+                </p>
+                <div className="mt-5">
+                  <ScoreRing score={result.result.combined} />
+                </div>
+                <p className="text-amber-200/90 font-cinzel text-lg mt-2">{scoreLabel(result.result.combined)}</p>
+                <p className="text-indigo-100/80 text-sm leading-relaxed max-w-2xl mx-auto mt-4">
+                  {bondVerdict(result.result.combined, best.title, watch.title)}
+                </p>
+                <p className="text-indigo-300/60 text-xs mt-3">
+                  The simple average of the {layers.length} layer{layers.length === 1 ? '' : 's'} you
+                  selected — each tells its own truth below.
+                </p>
+                <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {layers.map((l) => (
+                    <a
+                      key={l.key}
+                      href={`#syn-layer-${l.key}`}
+                      className="rounded-xl border border-indigo-400/20 bg-indigo-950/30 p-3 text-left transition-colors hover:border-amber-300/50"
+                    >
+                      <p className="font-cinzel text-[11px] tracking-wider text-amber-200/90 uppercase">
+                        {l.title}
+                      </p>
+                      <p className="font-cinzel text-xl text-amber-100">{l.score}%</p>
+                      <div className="mt-1 h-1 rounded-full bg-indigo-950/60 overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-gradient-to-r from-amber-300/70 to-amber-200"
+                          style={{ width: `${l.score}%` }}
+                        />
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )
+          })()}
 
           <div className="space-y-6 mt-10">
-            {result.result.layers.map((layer) => (
+            {result.result.layers.map((layer) => {
+              const harmonious = layer.details.filter((d) => d.tone === 'harmonious').length
+              const friction = layer.details.filter((d) => d.tone === 'friction').length
+              const neutral = layer.details.length - harmonious - friction
+              return (
               <section
                 key={layer.key}
-                className="rounded-3xl border border-indigo-400/20 bg-white/[0.03] backdrop-blur-sm p-6"
+                id={`syn-layer-${layer.key}`}
+                className="rounded-3xl border border-indigo-400/20 bg-white/[0.03] backdrop-blur-sm p-6 scroll-mt-24"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h2 className="font-cinzel text-2xl text-amber-100">{layer.title}</h2>
@@ -261,6 +359,11 @@ export default function SynastryPage() {
                   />
                 </div>
                 <p className="text-indigo-300/70 text-sm mt-3 italic">{layer.summary}</p>
+                <p className="text-[11px] text-indigo-300/50 mt-2 tracking-wide">
+                  {harmonious > 0 && <span className="text-emerald-200/80">✦ {harmonious} harmon{harmonious === 1 ? 'y' : 'ies'} </span>}
+                  {friction > 0 && <span className="text-rose-200/80">☾ {friction} friction{friction === 1 ? '' : 's'} </span>}
+                  {neutral > 0 && <span>○ {neutral} neutral</span>}
+                </p>
                 <div className="space-y-3 mt-4">
                   {layer.details.map((d, i) => (
                     <div
@@ -279,7 +382,8 @@ export default function SynastryPage() {
                   ))}
                 </div>
               </section>
-            ))}
+              )
+            })}
           </div>
 
           <p className="text-center text-indigo-300/40 text-xs italic mt-8">

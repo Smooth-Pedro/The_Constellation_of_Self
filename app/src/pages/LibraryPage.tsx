@@ -1,5 +1,5 @@
 import { Badge } from '@/components/ui/badge'
-import { NumbersLibrary, ArcanasLibrary, LibrarySeparator } from '@/components/LearnSection'
+import { NumbersLibrary, ArcanasLibrary, MinorArcanaLibrary, LibrarySeparator } from '@/components/LearnSection'
 import { SiteNav, PairLink } from '@/components/SmartRef'
 import FoolsJourney from '@/components/FoolsJourney'
 
@@ -21,8 +21,10 @@ export default function LibraryPage() {
         </h1>
         <p className="mt-4 text-indigo-200/70 max-w-2xl mx-auto leading-relaxed text-sm">
           The reference behind every reading on this site — what each number brings into any
-          position of a chart, and what each of the 22 Major Arcana means, shadow included. The{' '}
-          <PairLink hash="library-pairs">birth card pairs</PairLink> live on their own page.
+          position of a chart, what each of the 22 Major Arcana means, shadow included, and the
+          complete Minor Arcana: all four suits, all 56 cards, each with its meaning, shadow and
+          practice. The <PairLink hash="library-pairs">birth card pairs</PairLink> live on their
+          own page.
         </p>
       </header>
 
@@ -30,6 +32,8 @@ export default function LibraryPage() {
         <NumbersLibrary />
         <LibrarySeparator />
         <ArcanasLibrary />
+        <LibrarySeparator />
+        <MinorArcanaLibrary />
       </main>
 
       <footer className="text-center pb-10 text-indigo-300/40 text-xs tracking-[0.3em] uppercase">

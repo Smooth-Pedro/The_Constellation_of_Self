@@ -1,5 +1,7 @@
 import type { MajorArcana } from '@/lib/tarot'
-import { getCardArt } from '@/lib/cardArt'
+import type { MinorSuit } from '@/lib/minorArcana'
+import { getSuitInfo } from '@/lib/minorArcana'
+import { getCardArt, getMinorCardArt } from '@/lib/cardArt'
 
 /** Simple glyphs for each Major Arcana — used as card centre art */
 const GLYPHS: Record<number, string> = {
@@ -27,8 +29,10 @@ const GLYPHS: Record<number, string> = {
   21: '🌍', // The World — the dancing figure in the wreath
 }
 
+type AnyCardFace = MajorArcana | { suit: MinorSuit; num: number; rank: string; name: string; keywords: string[] }
+
 interface Props {
-  card: MajorArcana
+  card: AnyCardFace
   size?: 'sm' | 'md' | 'lg'
   flipped?: boolean
 }
@@ -40,9 +44,12 @@ export default function TarotCardFace({ card, size = 'md' }: Props) {
     lg: 'w-44 sm:w-56',
   }[size]
 
-  const art = getCardArt(card.num)
+  const isMinor = 'suit' in card
+  const art = isMinor
+    ? getMinorCardArt(card.suit, card.num)
+    : getCardArt(card.num)
 
-  // Real deck artwork for cards 0–9; stylised face for the rest (until the full deck arrives)
+  // Real deck artwork; stylised fallback face if the image is missing
   if (art) {
     return (
       <div
@@ -57,6 +64,9 @@ export default function TarotCardFace({ card, size = 'md' }: Props) {
       </div>
     )
   }
+
+  const glyph = isMinor ? getSuitInfo(card.suit).glyph : GLYPHS[card.num]
+  const topLabel = isMinor ? card.rank : (card as MajorArcana).roman
 
   return (
     <div
@@ -74,13 +84,13 @@ export default function TarotCardFace({ card, size = 'md' }: Props) {
 
         <div className="h-full flex flex-col items-center justify-between py-5 px-3 text-center">
           <span className="font-cinzel text-amber-200/90 text-sm tracking-[0.3em]">
-            {card.roman}
+            {topLabel}
           </span>
 
           <div className="flex-1 flex flex-col items-center justify-center gap-3">
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-amber-200/30 bg-amber-200/5 flex items-center justify-center shadow-[inset_0_0_20px_rgba(251,191,36,0.12)]">
               <span className="text-3xl sm:text-4xl text-amber-100 drop-shadow-[0_0_12px_rgba(251,191,36,0.5)]">
-                {GLYPHS[card.num]}
+                {glyph}
               </span>
             </div>
             <h3 className="font-cinzel text-amber-100 text-base sm:text-lg leading-tight px-1">

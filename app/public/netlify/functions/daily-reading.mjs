@@ -1,9 +1,9 @@
 // ─── Daily AI Tarot Reading — Netlify Function (ESM, zero dependencies) ───
 //
-// Draws one Major Arcana for the day (seeded by the date, so the card is the
-// same for everyone until midnight) and asks Gemini to interpret it in the
-// voice of the site, using the card meanings from /api/card-data.json
-// (extracted from the site's own tarot.ts).
+// Draws one card of the full 78-card deck for the day (seeded by the date, so
+// the card is the same for everyone until midnight) and asks Gemini to
+// interpret it in the voice of the site, using the card meanings from
+// /api/card-data.json (extracted from the site's own tarot data).
 //
 // Required env var:  GEMINI_API_KEY   (Google AI Studio key — never exposed to the browser)
 // Optional env var:  GEMINI_MODEL     (defaults to the current Flash generation)
@@ -18,7 +18,7 @@ const MODELS = process.env.GEMINI_MODEL
 
 const MAX_QUESTION = 300
 
-const SYSTEM_PROMPT = `You are the voice of a tarot and numerology site called "Tarot Birth Cards & Numerology". You speak for the Major Arcana card drawn for the day.
+const SYSTEM_PROMPT = `You are the voice of a tarot and numerology site called "Tarot Birth Cards & Numerology". You speak for the tarot card drawn for the day.
 
 Voice rules:
 - Mystical but grounded: warm, wise, unhurried; second person ("you").
@@ -102,7 +102,7 @@ ${question ? `The reader's question: "${question}"` : 'The reader asked no quest
     const data = await res.json()
     const reading = data?.candidates?.[0]?.content?.parts?.map((p) => p.text).join('').trim()
     if (!reading) return json({ error: 'The cards came back blank — try again.' }, 502)
-    return json({ configured: true, num: card.num, name: card.name, keywords: card.keywords, reading })
+    return json({ configured: true, id: card.id, num: card.num, suit: card.suit, name: card.name, keywords: card.keywords, reading })
   }
   return json({ error: 'No Gemini model available — check GEMINI_MODEL.' }, 502)
 }

@@ -8,6 +8,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import ResultsPanel, { type ReadingScope } from '@/components/ResultsPanel'
 import FoolsJourney from '@/components/FoolsJourney'
 import DailyReading from '@/components/DailyReading'
+import ThreeCardReading from '@/components/ThreeCardReading'
 import JourneyMeetings, { type JourneyEntry } from '@/components/JourneyMeetings'
 import { SiteNav, LibLink, PairLink } from '@/components/SmartRef'
 import { computeBirthCards } from '@/lib/tarot'
@@ -251,6 +252,9 @@ export default function Home() {
 
       {/* ── AI daily reading ─────────────────────────────── */}
       <DailyReading />
+
+      {/* ── Three-card readings ──────────────────────────── */}
+      <ThreeCardReading />
 
       {/* ── How it works ─────────────────────────────────── */}
       <section className="max-w-3xl mx-auto px-6 pb-20">

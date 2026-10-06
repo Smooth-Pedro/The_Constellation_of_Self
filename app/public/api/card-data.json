@@ -1,5 +1,6 @@
 [
  {
+  "id": "0",
   "num": 0,
   "name": "The Fool",
   "keywords": [
@@ -13,6 +14,7 @@
   "guidance": "Work with the Fool by honouring beginnings: give yourself permission to be a novice and to begin badly. Pair every leap with one small practical anchor — a savings buffer, a return ticket, a deadline — so that faith has something solid to stand on. Ask regularly: is this a true calling or just the thrill of the edge?"
  },
  {
+  "id": "1",
   "num": 1,
   "name": "The Magician",
   "keywords": [
@@ -26,6 +28,7 @@
   "guidance": "Work with the Magician by naming one intention at a time and giving it your full current. Inventory your actual tools — skills, contacts, time — before believing you lack anything. And set yourself an integrity test for every influence you wield: would I still do this if the other person could see my full hand?"
  },
  {
+  "id": "2",
   "num": 2,
   "name": "The High Priestess",
   "keywords": [
@@ -39,6 +42,7 @@
   "guidance": "Work with the High Priestess by treating intuition as data, not noise: write down what you sense before events confirm or deny it, and review the record. Protect a private inner life deliberately — a practice, a journal, a door that closes — and remember that the veil parts for the balanced, not the busy."
  },
  {
+  "id": "3",
   "num": 3,
   "name": "The Empress",
   "keywords": [
@@ -52,6 +56,7 @@
   "guidance": "Work with the Empress by creating conditions rather than forcing outcomes: feed the soil, then let the plant do its work. Schedule beauty the way you schedule obligations — it is maintenance, not luxury. And keep one corner of your life that is yours alone to tend, where you receive rather than give."
  },
  {
+  "id": "4",
   "num": 4,
   "name": "The Emperor",
   "keywords": [
@@ -65,6 +70,7 @@
   "guidance": "Work with the Emperor by building one structure that serves life rather than cages it — a budget, a routine, a constitution for your household — and reviewing it on schedule. Practise saying “I was wrong” out loud; it is the cheapest proof that your authority is real. And remember: the throne exists to hold the kingdom, not the other way around."
  },
  {
+  "id": "5",
   "num": 5,
   "name": "The Hierophant",
   "keywords": [
@@ -78,6 +84,7 @@
   "guidance": "Work with the Hierophant by apprenticing yourself to something older than you — a tradition, a craft, a lineage of thought — long enough to absorb its depth before editing it. Teach what you know; transmission completes the circuit. And when you inherit a rule, ask what problem it was built to solve before you keep or break it."
  },
  {
+  "id": "6",
   "num": 6,
   "name": "The Lovers",
   "keywords": [
@@ -91,6 +98,7 @@
   "guidance": "Work with the Lovers by writing your actual values down and testing your big choices against the list, not against the moment’s weather. Treat relationships as curriculum: what is this bond teaching, and am I learning or repeating? And when torn between two paths, ask which one you would defend even if no one ever applauded it."
  },
  {
+  "id": "7",
   "num": 7,
   "name": "The Chariot",
   "keywords": [
@@ -104,6 +112,7 @@
   "guidance": "Work with the Chariot by choosing fewer battles and winning them completely; define the destination in one sentence before you harness the horses. Notice which sphinx you have been starving — the disciplined one or the instinctive one — and feed it deliberately. And remember: the warrior’s real armour is certainty of purpose, not hardness."
  },
  {
+  "id": "8",
   "num": 8,
   "name": "Strength",
   "keywords": [
@@ -117,6 +126,7 @@
   "guidance": "Work with Strength by practising the long exhale in the exact moment you want to strike — the pause between impulse and action is where this card lives. Make peace with one appetite consciously (rest, food, anger, comfort) rather than warring with it forever. And measure your power not by what you can break but by what you can hold gently without tiring."
  },
  {
+  "id": "9",
   "num": 9,
   "name": "The Hermit",
   "keywords": [
@@ -130,6 +140,7 @@
   "guidance": "Work with the Hermit by scheduling real solitude — hours, not minutes — and protecting it from the world’s static. Carry the lantern for others occasionally: share what your solitude has taught, or it curdles into superiority. And when you notice the difference between “I need to be alone” and “I am afraid to be seen”, honour whichever is true."
  },
  {
+  "id": "10",
   "num": 10,
   "name": "Wheel of Fortune",
   "keywords": [
@@ -143,6 +154,7 @@
   "guidance": "Work with the Wheel by investing in what survives a full rotation — skills, relationships, health — rather than only what pays this quarter. Learn to read your own cycles: when did effort last pay off, and when did patience? And when at the bottom, act like someone who has read the card: prepare, because the turn is coming."
  },
  {
+  "id": "11",
   "num": 11,
   "name": "Justice",
   "keywords": [
@@ -156,6 +168,7 @@
   "guidance": "Work with Justice by keeping your own ledger honestly: what you gave, what you took, what you owe. Before judging, gather the missing facts — the scales demand evidence, not vibes. And practise restorative over punitive justice wherever you have the power: the goal is a mended balance, not a broken opponent."
  },
  {
+  "id": "12",
   "num": 12,
   "name": "The Hanged Man",
   "keywords": [
@@ -169,6 +182,7 @@
   "guidance": "Work with the Hanged Man by choosing your suspensions deliberately: when something refuses to move, stop pushing and change your angle instead. Ask “what is this pause teaching?” before asking “how do I end it?”. And retire the word sacrifice whenever martyrdom is what is actually being offered — the card accepts only willing surrender."
  },
  {
+  "id": "13",
   "num": 13,
   "name": "Death",
   "keywords": [
@@ -182,6 +196,7 @@
   "guidance": "Work with Death by holding a personal ritual of endings: finish, bury, and bless what is over before seeding what is next. When the card appears, ask “what is trying to end here?” rather than “what is going wrong?”. And grieve honestly — transformation that skips mourning returns as haunting."
  },
  {
+  "id": "14",
   "num": 14,
   "name": "Temperance",
   "keywords": [
@@ -195,6 +210,7 @@
   "guidance": "Work with Temperance by diluting intensity on purpose: when life runs hot, add routine; when it runs cold, add ritual. Practise one daily moderation deliberately — it trains the pouring hand for the bigger mixes. And in conflict, refuse both war and surrender: keep pouring until a third thing appears."
  },
  {
+  "id": "15",
   "num": 15,
   "name": "The Devil",
   "keywords": [
@@ -208,6 +224,7 @@
   "guidance": "Work with the Devil by naming one chain honestly and testing how loose it is: skip it once and watch the panic — that measurement is the reading. Replace suppression with redirection, since the current will not stop flowing. And remember the card’s final secret: the moment the bondage is truly seen, it is already half unbuckled."
  },
  {
+  "id": "16",
   "num": 16,
   "name": "The Tower",
   "keywords": [
@@ -221,6 +238,7 @@
   "guidance": "Work with the Tower by auditing your structures before the sky does: which of your towers would you defend with a lie? When the lightning comes, do not rebuild the same floor plan — the blueprint was the problem. And keep this card’s dignity: it never destroys what is true; it only finishes what was false."
  },
  {
+  "id": "17",
   "num": 17,
   "name": "The Star",
   "keywords": [
@@ -234,6 +252,7 @@
   "guidance": "Work with the Star by healing in both directions like the pouring figure — restore something in yourself and something in the world, every week. Protect your hope as an instrument: calibrated, honest, but never surrendered. And when faith is gone, borrow someone else’s; the stars are communal property."
  },
  {
+  "id": "18",
   "num": 18,
   "name": "The Moon",
   "keywords": [
@@ -247,6 +266,7 @@
   "guidance": "Work with the Moon by honouring the irrational on schedule: dreams written down, instinct consulted before big moves, fear named precisely so it can be sized. Never sign contracts in the fog — wait for daylight on anything that can be waited on. And keep one practice, art or person through which the subconscious is allowed to speak in its own language."
  },
  {
+  "id": "19",
   "num": 19,
   "name": "The Sun",
   "keywords": [
@@ -260,6 +280,7 @@
   "guidance": "Work with the Sun by treating joy as a duty to your chart: celebrate loudly and early, before the cautious part of you files its objections. Share your wins on purpose — this card’s luck multiplies in public. And when clouds cross, remember they are weather, not identity: the sun in this card never actually goes out."
  },
  {
+  "id": "20",
   "num": 20,
   "name": "Judgement",
   "keywords": [
@@ -273,6 +294,7 @@
   "guidance": "Work with Judgement by holding an honest annual audit of your life: what did I do, what did I avoid, whom do I still need to forgive? Treat the call as data — when something will not stop summoning you, it is usually because it is yours. And deliver your verdicts with mercy: the card’s purpose is resurrection, not punishment."
  },
  {
+  "id": "21",
   "num": 21,
   "name": "The World",
   "keywords": [
@@ -284,5 +306,845 @@
   "meaning": "The World is the final card — the dance of completion. A cycle has closed successfully, and you stand whole, integrated, ready for the next turn of the spiral. Celebration is earned.",
   "shadow": "Incompletion, shortcuts, loose ends",
   "guidance": "Work with the World by honouring completions ritually: finished things must be marked, or the psyche learns that endings do not count. Resist the shortcut on the final stretch; this card is precisely about the last mile. And when a cycle closes, celebrate before beginning again — the dance at the centre of the wreath is the point of the entire journey."
+ },
+ {
+  "id": "wands-01",
+  "num": 1,
+  "suit": "Wands",
+  "name": "Ace of Wands",
+  "keywords": [
+   "Spark",
+   "New venture",
+   "Creative urge",
+   "Inspiration"
+  ],
+  "meaning": "A hand offers a living wand, green and leafing. The Ace of Wands is the original spark — a surge of creative fire, a new ambition, an idea that wants to become a thing. Pure potential energy has arrived.",
+  "shadow": "Delays, hesitation, the spark unclaimed",
+  "guidance": "Act within twenty-four hours while the heat is real: make the call, sketch the plan, say the yes. Give the spark one concrete action as fuel, and protect the early flame from critics — it is strong, but it is young."
+ },
+ {
+  "id": "wands-02",
+  "num": 2,
+  "suit": "Wands",
+  "name": "Two of Wands",
+  "keywords": [
+   "Planning",
+   "Future vision",
+   "First steps",
+   "Boldness"
+  ],
+  "meaning": "A figure stands between two wands, one hand on a globe, looking out over open land toward a distant sea. The Two of Wands is the moment after the spark: planning the conquest, seeing the bigger map, daring to want more than the safe courtyard.",
+  "shadow": "Fear of the unknown, hesitation, playing small",
+  "guidance": "Write the vision down in one sentence, then identify the first physical step toward it and take it this week. Keep one foot on your current ground while you scout the new — the card holds both wands for a reason."
+ },
+ {
+  "id": "wands-03",
+  "num": 3,
+  "suit": "Wands",
+  "name": "Three of Wands",
+  "keywords": [
+   "Expansion",
+   "Foresight",
+   "First results",
+   "Waiting for ships"
+  ],
+  "meaning": "A figure watches from a cliff as three ships cross the sea toward him. The Three of Wands says the ships are already sailing — the first results of your vision are on the water, and now the work is patience and preparation for their arrival.",
+  "shadow": "Delays, shortsightedness, frustration with slow progress",
+  "guidance": "Do the follow-up and then let go: one nudge, then trust the crossing. Use the waiting to build the dock — prepare your finances, your schedule, your skills — so that when the ships arrive you can actually receive them."
+ },
+ {
+  "id": "wands-04",
+  "num": 4,
+  "suit": "Wands",
+  "name": "Four of Wands",
+  "keywords": [
+   "Celebration",
+   "Homecoming",
+   "Stability",
+   "Community"
+  ],
+  "meaning": "Four wands crowned with a garland stand before a joyful scene — a harvest dance, a decorated canopy. The Four of Wands is the first true resting point of the suit: milestone reached, foundations laid, a reason to gather and celebrate.",
+  "shadow": "Instability, uncelebrated milestones, transition stress",
+  "guidance": "Mark completions properly: ritualise them, however small. Ask whether your four corner posts — body, home, love, work — are all standing, and shore up the wobbly one. Celebration is not the reward of the work; it is part of the structure."
+ },
+ {
+  "id": "wands-05",
+  "num": 5,
+  "suit": "Wands",
+  "name": "Five of Wands",
+  "keywords": [
+   "Conflict",
+   "Competition",
+   "Creative tension",
+   "Sparring"
+  ],
+  "meaning": "Five figures brandish wands at one another — no one is wounded, no one is winning. The Five of Wands is productive friction: competition, debate, the clash of egos and ideas from which something better is eventually forged.",
+  "shadow": "Avoided conflict, mismatched energies, rivalry turning sour",
+  "guidance": "Step into the ring if the fight matters: state your position cleanly and let it be tested. If it doesn't matter, referee instead of competing — the Five resolves fastest when someone names the actual question underneath all the wands."
+ },
+ {
+  "id": "wands-06",
+  "num": 6,
+  "suit": "Wands",
+  "name": "Six of Wands",
+  "keywords": [
+   "Victory",
+   "Recognition",
+   "Triumph",
+   "Public success"
+  ],
+  "meaning": "A rider on horseback wears a laurel wreath as a crowd raises wands in salute. The Six of Wands is public victory — the project that lands, the effort that gets seen, the well-earned moment at the centre of the cheering crowd.",
+  "shadow": "Ego inflation, fall from grace, delays in recognition",
+  "guidance": "Receive the praise fully — you earned it, and deflecting it wastes it. Then share the wreath: name the people who carried wands for you. And keep doing the work that won; the Six rewards substance, and only substance sustains the next round."
+ },
+ {
+  "id": "wands-07",
+  "num": 7,
+  "suit": "Wands",
+  "name": "Seven of Wands",
+  "keywords": [
+   "Defense",
+   "Standing your ground",
+   "Conviction",
+   "Perseverance"
+  ],
+  "meaning": "A figure stands on a hilltop, wand raised, facing six wands rising against him from below. The Seven of Wands is the defence of what you have built — outnumbered, unassisted, but holding the high ground because your position is right.",
+  "shadow": "Being overwhelmed, giving up, paranoia about attacks",
+  "guidance": "Check the ground before the battle: is your position actually right, or merely yours? If right, defend it once, clearly, and stop re-arguing. Conserve energy — the Seven is won by endurance, not by winning every skirmish."
+ },
+ {
+  "id": "wands-08",
+  "num": 8,
+  "suit": "Wands",
+  "name": "Eight of Wands",
+  "keywords": [
+   "Swift action",
+   "Movement",
+   "Rapid progress",
+   "Alignment"
+  ],
+  "meaning": "Eight wands fly through the air in one clean arc over open land. The Eight of Wands is sudden, aligned momentum — events moving faster than doubt, messages landing, the project that finally takes off all at once.",
+  "shadow": "Delays, misaligned efforts, haste and scattered fire",
+  "guidance": "Move while it moves: answer fast, decide fast, travel now. Before accelerating, name the one destination all eight wands serve — alignment is the engine of this card. And don't mistake the rush for a reason to skip the one detail that matters."
+ },
+ {
+  "id": "wands-09",
+  "num": 9,
+  "suit": "Wands",
+  "name": "Nine of Wands",
+  "keywords": [
+   "Resilience",
+   "Last stand",
+   "Guarded strength",
+   "Wounded defender"
+  ],
+  "meaning": "A battered figure leans on a wand, eight more wands standing behind him like a palisade. The Nine of Wands is the survivor's card: hurt, tired, still standing — the final test arrives exactly when your strength is lowest, and you are still enough.",
+  "shadow": "Exhaustion, paranoia, giving up at the final hurdle",
+  "guidance": "Count what is actually left to do, not what could go wrong — the palisade is stronger than it feels. Protect your remaining energy ruthlessly: rest is strategy now. And remember: this is the ninth wand, not the tenth; the end is closer than the fatigue suggests."
+ },
+ {
+  "id": "wands-10",
+  "num": 10,
+  "suit": "Wands",
+  "name": "Ten of Wands",
+  "keywords": [
+   "Burden",
+   "Overload",
+   "Responsibility",
+   "Carrying too much"
+  ],
+  "meaning": "A figure bows under the weight of ten wands, carrying them toward a distant town. The Ten of Wands is success that has become a load — every opportunity accepted, every fire kept burning, until the very abundance of the suit bends your back.",
+  "shadow": "Delegation, release, setting boundaries, learning to drop wands",
+  "guidance": "Audit the bundle wand by wand: carry what is truly yours, hand back what was never yours, and let die what has already burned out. Deliver the load, then rest before lighting anything new — the Ten completes the suit precisely so you don't have to."
+ },
+ {
+  "id": "wands-11",
+  "num": 11,
+  "suit": "Wands",
+  "name": "Page of Wands",
+  "keywords": [
+   "Free spirit",
+   "Exploration",
+   "Creative spark",
+   "Good news"
+  ],
+  "meaning": "A young figure holds a sprouting wand and gazes at the desert beyond the cliffs. The Page of Wands is the suit's messenger — a fresh burst of enthusiasm, a promising idea, an invitation to explore that arrives with youthful, unjaded energy.",
+  "shadow": "Impulsiveness, immaturity, scattered energy",
+  "guidance": "Treat the Page's idea as a seed, not a forest: test it cheaply and quickly. Give the enthusiasm one structured outlet — a schedule, a budget, a first deliverable — so the spark becomes a flame instead of a flash. And say yes to the adventure, just read the map first."
+ },
+ {
+  "id": "wands-12",
+  "num": 12,
+  "suit": "Wands",
+  "name": "Knight of Wands",
+  "keywords": [
+   "Adventure",
+   "Bold action",
+   "Passion",
+   "Charging ahead"
+  ],
+  "meaning": "A knight in armour rides a rearing horse across a desert, wand raised, flames on his tunic. The Knight of Wands is pure pursuit — the fire of the suit given legs, charging toward the goal with a courage that makes bystanders either cheer or duck.",
+  "shadow": "Impulsivity, arrogance, unfinished quests",
+  "guidance": "Aim before you gallop: name the destination, check the horse has water, then commit fully. Finish one quest before accepting the next — the Knight's gift is follow-through, not just charge. And pair every bold move with one patient one; the desert is crossed by both."
+ },
+ {
+  "id": "wands-13",
+  "num": 13,
+  "suit": "Wands",
+  "name": "Queen of Wands",
+  "keywords": [
+   "Confidence",
+   "Charisma",
+   "Warmth",
+   "Social mastery"
+  ],
+  "meaning": "A crowned queen sits before a desert of sunflowers, a black cat at her feet, a wand held like a sceptre and a sunflower in her other hand. The Queen of Wands has mastered fire inwardly: magnetic, warm, self-assured — the person the room reorganises itself around.",
+  "shadow": "Jealousy, attention-seeking, hidden insecurity",
+  "guidance": "Own the room without needing to fill it: let warmth, not volume, be your magnetism. Guard the inner fire with solitude — the Queen recharges alone. And use the charisma as a stage for others; the brightest thing about this queen is how she makes everyone near her glow."
+ },
+ {
+  "id": "wands-14",
+  "num": 14,
+  "suit": "Wands",
+  "name": "King of Wands",
+  "keywords": [
+   "Visionary leadership",
+   "Entrepreneurship",
+   "Authority",
+   "Bold vision"
+  ],
+  "meaning": "A king on a throne of lions and salamanders holds a flowering wand; the desert blooms behind him. The King of Wands has mastered fire outwardly — the established visionary who turns bold ideas into empires and carries others on the heat of certainty.",
+  "shadow": "Tyranny, ego-driven vision, impulsive decisions",
+  "guidance": "Lead by painting the vision so clearly that people enlist themselves. Keep one truth-teller close — every King of Wands needs a court jester who can say \"the dream has a hole in it\". And check every big decision against the empire it serves, not the applause it earns."
+ },
+ {
+  "id": "cups-01",
+  "num": 1,
+  "suit": "Cups",
+  "name": "Ace of Cups",
+  "keywords": [
+   "New love",
+   "Emotional renewal",
+   "Compassion",
+   "Open heart"
+  ],
+  "meaning": "An ornate cup overflows as a dove descends with a host, five streams pouring into a calm pool. The Ace of Cups is the heart's original gift — love beginning or renewing, compassion arriving, the inner life refilled from a source deeper than circumstance.",
+  "shadow": "Emotional blocks, emptiness, repressed feeling",
+  "guidance": "Receive before you analyse — this cup is a gift, not a problem to solve. Say the feeling out loud to someone safe; the Ace multiplies when shared. And give it a channel: love that moves through you into art, work or kindness stays fresh; love hoarded turns."
+ },
+ {
+  "id": "cups-02",
+  "num": 2,
+  "suit": "Cups",
+  "name": "Two of Cups",
+  "keywords": [
+   "Partnership",
+   "Mutual attraction",
+   "Union",
+   "Harmony"
+  ],
+  "meaning": "Two figures exchange cups beneath a caduceus crowned by a lion's head, a bridge to a house in the distance. The Two of Cups is the meeting of hearts: partnership in perfect balance, attraction answered, the sacred \"I see you\" between two people.",
+  "shadow": "Imbalance, broken connection, love withheld",
+  "guidance": "Check the exchange: are both cups moving? Say the thing that keeps the connection honest, even if it rocks the table. And protect the bond's rituals — the shared meals, the check-ins — because the Two of Cups is not a state but a practice."
+ },
+ {
+  "id": "cups-03",
+  "num": 3,
+  "suit": "Cups",
+  "name": "Three of Cups",
+  "keywords": [
+   "Celebration",
+   "Friendship",
+   "Community joy",
+   "Togetherness"
+  ],
+  "meaning": "Three figures raise cups in a dance, the harvest of fruit and pumpkin at their feet. The Three of Cups is collective happiness — the friend group, the reunion, the wedding table, the joy that exists only because it is shared.",
+  "shadow": "Overindulgence, gossip, feeling like the outsider",
+  "guidance": "Invest in the circle deliberately: friendships die of neglect, not conflict. Celebrate others' wins with the same energy you want at yours. And if you are the outsider, pour for the group anyway — the Three always has room for one more cup."
+ },
+ {
+  "id": "cups-04",
+  "num": 4,
+  "suit": "Cups",
+  "name": "Four of Cups",
+  "keywords": [
+   "Apathy",
+   "Contemplation",
+   "Missed offers",
+   "Discontent"
+  ],
+  "meaning": "A figure sits beneath a tree, arms crossed, staring at three cups on the ground — unaware of a fourth cup being offered from a cloud behind. The Four of Cups is emotional stillness: the heart closed by boredom, grief or saturation while life offers anyway.",
+  "shadow": "Renewed interest, acceptance, motivation returning",
+  "guidance": "Name the flatness without judging it: \"I feel nothing much\" is data, not failure. Look deliberately at what is being offered right now — from people, from the day itself — and try one small yes you would normally wave away. Stillness is sometimes rest; give it a week before calling it a rut."
+ },
+ {
+  "id": "cups-05",
+  "num": 5,
+  "suit": "Cups",
+  "name": "Five of Cups",
+  "keywords": [
+   "Grief",
+   "Loss",
+   "Disappointment",
+   "Mourning"
+  ],
+  "meaning": "A cloaked figure bows over three spilled cups, ignoring the two full ones behind — and the bridge to home beyond. The Five of Cups is the heart in mourning: loss is real, grief is right, and yet the cup of what remains stands unregarded at your back.",
+  "shadow": "Acceptance, moving forward, finding what remains",
+  "guidance": "Grieve fully and on purpose: name what spilled, honour it, and let it be spilled. Then turn around — literally changing posture can help — and inventory what still stands. The bridge is real: take one step toward the two full cups this week."
+ },
+ {
+  "id": "cups-06",
+  "num": 6,
+  "suit": "Cups",
+  "name": "Six of Cups",
+  "keywords": [
+   "Nostalgia",
+   "Childhood memories",
+   "Innocence",
+   "Gentle gifts"
+  ],
+  "meaning": "A child offers a cup of flowers to a smaller child in a village garden, six cups blooming between them. The Six of Cups is the past returned gently: nostalgia, old friends, the kindness that resurfaces, the memory that warms instead of wounds.",
+  "shadow": "Living in the past, naivety, unrealistic idealism",
+  "guidance": "Visit the past as a guest, not a resident: reconnect, reminisce, take the warmth — then return to now with it. Give one small, free gift this week; the Six works through simple kindness. And if the past keeps calling, ask what it wants you to bring forward, not go back to."
+ },
+ {
+  "id": "cups-07",
+  "num": 7,
+  "suit": "Cups",
+  "name": "Seven of Cups",
+  "keywords": [
+   "Choices",
+   "Fantasy",
+   "Wishful thinking",
+   "Many options"
+  ],
+  "meaning": "A figure contemplates seven cups floating in a cloud, each holding a different vision — treasure, fame, a monster, a snake, a wreath, a castle, a radiant figure. The Seven of Cups is the imagination at full power and zero resolution: dreams, options and illusions all mixed together.",
+  "shadow": "Clarity, commitment, anchoring dreams in reality",
+  "guidance": "Reality-test each cup: what would this option cost, in hours and in truth? Pick one cup and take one physical step toward it — the fog clears at ground level, never in the cloud. And keep the imagination as an engine, not a residence: dream vividly, then build."
+ },
+ {
+  "id": "cups-08",
+  "num": 8,
+  "suit": "Cups",
+  "name": "Eight of Cups",
+  "keywords": [
+   "Walking away",
+   "Seeking deeper meaning",
+   "Leaving the familiar",
+   "Disillusionment"
+  ],
+  "meaning": "A figure turns his back on eight stacked cups and walks toward distant mountains under an eclipse. The Eight of Cups is the bravest exit in the suit: leaving something good because it is no longer true — trading the full cups for a question worth more.",
+  "shadow": "Fear of change, stagnation, returning to what was left",
+  "guidance": "Before leaving, be sure it is the cups that are empty and not your attention — rest and honesty can refill surprising things. If the leaving is true, go cleanly: no dramatic door-slam, no lingering at the threshold. And answer the mountains' question with your feet; the path appears by walking."
+ },
+ {
+  "id": "cups-09",
+  "num": 9,
+  "suit": "Cups",
+  "name": "Nine of Cups",
+  "keywords": [
+   "Contentment",
+   "Wish fulfilled",
+   "Emotional satisfaction",
+   "Gratitude"
+  ],
+  "meaning": "A satisfied figure sits before nine golden cups, arms crossed in quiet triumph. The Nine of Cups is the \"wish card\" — emotional fulfilment, desires met, the table of the heart fully set and the self finally at ease in its own chair.",
+  "shadow": "Smugness, dissatisfaction, wishes that miss the point",
+  "guidance": "Receive it: let yourself actually feel the wish fulfilled for one full minute before planning the next one. Say thank you — to people, to luck, to your own past effort. And when a new wish forms, test it against the heart's deep list, not the ego's loud one."
+ },
+ {
+  "id": "cups-10",
+  "num": 10,
+  "suit": "Cups",
+  "name": "Ten of Cups",
+  "keywords": [
+   "Family harmony",
+   "Lasting happiness",
+   "Emotional fulfilment",
+   "The rainbow promise"
+  ],
+  "meaning": "A couple embraces beneath a rainbow of ten cups while children dance and a village thrives in the valley. The Ten of Cups is the suit's completion: not private contentment but shared joy — the family, community or partnership in which love has become a structure that shelters everyone.",
+  "shadow": "Disharmony, broken dreams, happiness performed for show",
+  "guidance": "Build the rainbow deliberately: joy shared is the only kind that lasts, so invest in the rituals — meals, calls, traditions — that carry love across years. Repair one small crack in your closest circle before it widens. And when harmony arrives, do not audit it; just stand under it."
+ },
+ {
+  "id": "cups-11",
+  "num": 11,
+  "suit": "Cups",
+  "name": "Page of Cups",
+  "keywords": [
+   "Intuitive messages",
+   "Tender feelings",
+   "Artistic beginnings",
+   "Sensitivity"
+  ],
+  "meaning": "A young figure gazes at a fish rising from an offered cup, as if the cup itself were speaking. The Page of Cups is the heart's messenger: a feeling worth listening to, an artistic impulse, a moment of unexpected tenderness or intuitive insight arriving wrapped in innocence.",
+  "shadow": "Escapism, hypersensitivity, creative blocks",
+  "guidance": "Treat feelings as mail, not as law: read them, thank them, then check the address. Give the tender impulse one concrete form — write the verse, send the message, paint the thing. And keep a boundary or two around the sensitivity; the Page thrives with a skin, not just a heart."
+ },
+ {
+  "id": "cups-12",
+  "num": 12,
+  "suit": "Cups",
+  "name": "Knight of Cups",
+  "keywords": [
+   "Romantic pursuit",
+   "Following the heart",
+   "Offers of love",
+   "Creative devotion"
+  ],
+  "meaning": "A knight rides slowly, holding a cup as if it were a chalice, his horse pausing mid-journey. The Knight of Cups is the suit's suitor — the heart given direction: romance pursued sincerely, creative work made as an offering, the graceful gesture that says what words cannot.",
+  "shadow": "Moodiness, unrealistic promises, heart over head",
+  "guidance": "Let the heart lead, but hand the map to the head: feel everything, verify something. Keep the promises small enough to keep them all. And notice the difference between devotion and performance — the Knight's cup is for the beloved, not the audience."
+ },
+ {
+  "id": "cups-13",
+  "num": 13,
+  "suit": "Cups",
+  "name": "Queen of Cups",
+  "keywords": [
+   "Emotional mastery",
+   "Empathy",
+   "Intuition",
+   "Calm depth"
+  ],
+  "meaning": "A queen sits on a throne at the sea's edge, holding a lidded cup, her feet resting on the water. The Queen of Cups has mastered water inwardly: she feels everything and is ruled by nothing — empathy without drowning, intuition without superstition, depth that stays calm.",
+  "shadow": "Emotional overwhelm, martyrdom, porous boundaries",
+  "guidance": "Open the cup by choice: decide when to feel fully and when to guard the lid. Pour out as much as you take in — empathy needs an outflow or it stagnates. And treat your intuition as a wise advisor rather than a monarch: listen always, obey after checking."
+ },
+ {
+  "id": "cups-14",
+  "num": 14,
+  "suit": "Cups",
+  "name": "King of Cups",
+  "keywords": [
+   "Emotional balance",
+   "Diplomacy",
+   "Calm authority",
+   "Mastery of feeling"
+  ],
+  "meaning": "A king sits on a throne amid waves that never wet him, holding a cup and sceptre, a fish on a chain around his neck. The King of Cups has mastered water outwardly: the diplomat of the deck — feeling deeply, deciding calmly, holding others' storms without becoming one.",
+  "shadow": "Emotional manipulation, suppressed volatility, cold distance",
+  "guidance": "Practise the pause between feeling and response — the King's whole craft lives in that gap. Speak the true thing with its kind wrapper intact. And keep one honest outlet for your own weather: a king who holds everyone's sea still needs a river of his own."
+ },
+ {
+  "id": "swords-01",
+  "num": 1,
+  "suit": "Swords",
+  "name": "Ace of Swords",
+  "keywords": [
+   "Clarity",
+   "Truth",
+   "Breakthrough",
+   "A new idea"
+  ],
+  "meaning": "A crowned sword stands upright through a wreath, mountains rising behind. The Ace of Swords is the mind's original gift — a blade of pure truth: the insight that cuts through fog, the words that finally say it, the decision that ends the circling.",
+  "shadow": "Confusion, harsh truth, words used as weapons",
+  "guidance": "Write the thought down before speaking it — the Ace rewards precision. Speak the true thing with the kindest true words you can find. And use it on your own self-deceptions first; the sword is safest in the hand that has cut its own fog."
+ },
+ {
+  "id": "swords-02",
+  "num": 2,
+  "suit": "Swords",
+  "name": "Two of Swords",
+  "keywords": [
+   "Stalemate",
+   "Difficult decision",
+   "Avoidance",
+   "Truce"
+  ],
+  "meaning": "A blindfolded figure sits with two crossed swords over her chest, the sea rough behind her. The Two of Swords is the mind in gridlock: a decision that must be made and is being not-made — eyes covered, arms crossed, heart quieted so it will not interfere.",
+  "shadow": "Indecision, information overload, detachment from feeling",
+  "guidance": "Remove the blindfold first: name what you actually want, before what you should want. Then decide with both organs — one clear thought and one honest feeling, taken together. And set a deadline; the Two of Swords dissolves the moment deciding becomes more comfortable than not-deciding."
+ },
+ {
+  "id": "swords-03",
+  "num": 3,
+  "suit": "Swords",
+  "name": "Three of Swords",
+  "keywords": [
+   "Heartbreak",
+   "Sorrow",
+   "Painful truth",
+   "Grief"
+  ],
+  "meaning": "Three swords pierce a stormy heart as rain falls. The Three of Swords is the mind wounding the heart — or the truth wounding both: heartbreak, betrayal, the sentence that cannot be unheard. It is the deck's purest image of sorrow, and it does not apologise.",
+  "shadow": "Recovery, release, suppressed grief finally felt",
+  "guidance": "Let it rain: grieve on purpose, in a form that fits — tears, words, walking, ritual. Do not decide anything permanent from inside the storm; clarity returns with the weather. And when the rain slows, tell the story to someone safe; a heart pierced by truth heals faster in company than in silence."
+ },
+ {
+  "id": "swords-04",
+  "num": 4,
+  "suit": "Swords",
+  "name": "Four of Swords",
+  "keywords": [
+   "Rest",
+   "Recovery",
+   "Retreat",
+   "Truce"
+  ],
+  "meaning": "A knight lies in repose on a tomb in a church, three swords hanging above him, one beneath. The Four of Swords is the mind at rest — deliberate stillness after the storm of the Three: recovery, retreat, the strategic pause that saves the campaign.",
+  "shadow": "Burnout, restlessness, returning to battle too soon",
+  "guidance": "Schedule the rest before you need it, and treat it as part of the work — this card is strategy, not surrender. Guard the pause from guilt; the swords will keep. And rise when renewed, deliberately: the Four of Swords ends by ending."
+ },
+ {
+  "id": "swords-05",
+  "num": 5,
+  "suit": "Swords",
+  "name": "Five of Swords",
+  "keywords": [
+   "Defeat",
+   "Hollow victory",
+   "Betrayal",
+   "Pyrrhic win"
+  ],
+  "meaning": "A smirking figure gathers five swords as two defeated figures walk off into rough water. The Five of Swords is the mind at war: conflict won at a cost that empties the winning — the argument \"settled\" by destroying the relationship that held it.",
+  "shadow": "Reconciliation, making amends, learning from loss",
+  "guidance": "Count the true cost of the win: what did victory actually purchase? If the answer embarrasses you, make amends — returning one sword restores more than winning five. And next conflict, define victory before the fight: if it requires the other side destroyed, you have already lost."
+ },
+ {
+  "id": "swords-06",
+  "num": 6,
+  "suit": "Swords",
+  "name": "Six of Swords",
+  "keywords": [
+   "Transition",
+   "Moving on",
+   "Rite of passage",
+   "Leaving difficulty"
+  ],
+  "meaning": "A boatman ferries a veiled figure and a child across calm water toward a distant shore, six swords standing in the boat. The Six of Swords is the mind in passage: leaving the turbulence for quieter water — slow, necessary, and quieter than the storm it exits.",
+  "shadow": "Stagnation, unfinished business, resistance to change",
+  "guidance": "Pack light but carry the lesson: what did the rough water teach? Let yourself travel quietly — this transition needs no announcement. And do not expect instant joy on the far shore; calm arrives before happiness does, and calm is already an enormous thing."
+ },
+ {
+  "id": "swords-07",
+  "num": 7,
+  "suit": "Swords",
+  "name": "Seven of Swords",
+  "keywords": [
+   "Strategy",
+   "Deception",
+   "Getting away with something",
+   "Hidden motives"
+  ],
+  "meaning": "A figure slips away from a camp carrying five swords, two left standing behind, a patrol approaching in the distance. The Seven of Swords is the mind playing chess: strategy, secrecy, the clever route — sometimes justified resourcefulness, sometimes plain deception.",
+  "shadow": "Coming clean, exposed strategy, conscience calling",
+  "guidance": "Run the daylight test: would this plan survive being read aloud at the camp? If yes, proceed boldly — strategy is legitimate. If no, return the swords before the patrol arrives; coming clean costs far less now than exposure costs later. And keep cleverness in service of integrity — it makes a poor master and an excellent tool."
+ },
+ {
+  "id": "swords-08",
+  "num": 8,
+  "suit": "Swords",
+  "name": "Eight of Swords",
+  "keywords": [
+   "Restriction",
+   "Self-imposed limits",
+   "Victim mentality",
+   "Feeling trapped"
+  ],
+  "meaning": "A bound figure stands among eight swords in muddy ground, a clear path and a distant castle free behind her. The Eight of Swords is the cage with the door open: restriction that is real-feeling and mostly self-administered — the mind convincing itself that the bindings are locked.",
+  "shadow": "Liberation, new perspective, taking power back",
+  "guidance": "Test one binding: pull against the nearest one and discover it is cloth. Ask \"what exactly stops me?\" until the answer becomes specific — specific problems have doors. Take one small unbound step (the card's path is walked one pace at a time), and get one outside witness; every liberation story needs a friend who says \"but you are free\"."
+ },
+ {
+  "id": "swords-09",
+  "num": 9,
+  "suit": "Swords",
+  "name": "Nine of Swords",
+  "keywords": [
+   "Anxiety",
+   "Nightmares",
+   "Worry",
+   "3 a.m. thoughts"
+  ],
+  "meaning": "A figure sits up in bed at night, head in hands, nine swords on the wall behind. The Nine of Swords is the mind at its worst hour — anxiety uncoiling at 3 a.m., dread rehearsing futures that have not happened, the cruel intelligence turned inward.",
+  "shadow": "Release, reaching out, help arriving, dawn",
+  "guidance": "Do not solve your life at 3 a.m. — nothing true is decided in that hour; write the fear down and promise to examine it by daylight. Separate facts from forecasts: how many of the nine swords have actually cut? And tell someone. This card is the deck's strongest argument for saying \"I have not been sleeping\" out loud."
+ },
+ {
+  "id": "swords-10",
+  "num": 10,
+  "suit": "Swords",
+  "name": "Ten of Swords",
+  "keywords": [
+   "Rock bottom",
+   "Painful ending",
+   "Betrayal",
+   "The worst is over"
+  ],
+  "meaning": "A figure lies pierced by ten swords on a barren plain — while a black storm lifts on the horizon and dawn waits behind it. The Ten of Swords is the suit's terminus: total collapse of a way of thinking, a betrayal complete, the ending so thorough it can only be survived.",
+  "shadow": "Recovery, inevitable dawn, rising from the ending",
+  "guidance": "Do not get up yet — first let the ending be an ending. Grieve the plan, name the betrayal, and extract the one lesson the ten swords came to teach (there is always exactly one). Then rise in daylight, with help; and build the next thing elsewhere, on different ground, with the lesson worn like armour."
+ },
+ {
+  "id": "swords-11",
+  "num": 11,
+  "suit": "Swords",
+  "name": "Page of Swords",
+  "keywords": [
+   "Curiosity",
+   "Vigilance",
+   "New ideas",
+   "Herald of truth"
+  ],
+  "meaning": "A young figure stands on windswept ground, sword up, clouds racing behind. The Page of Swords is the mind's messenger: a fresh idea, a message demanding honesty, the alert and watchful energy of someone learning to think — and to speak — for themselves.",
+  "shadow": "Gossip, all talk, defensiveness",
+  "guidance": "Think before you speak, but do not stop speaking — the Page's gift is honest speech, still under construction. Fact-check your own hottest opinions first. And aim the sharpness at problems, never at people; the Page who learns that distinction becomes the Knight."
+ },
+ {
+  "id": "swords-12",
+  "num": 12,
+  "suit": "Swords",
+  "name": "Knight of Swords",
+  "keywords": [
+   "Decisive action",
+   "Intellectual pursuit",
+   "Fast thinking",
+   "Charge of ideas"
+  ],
+  "meaning": "A knight charges headlong through a storm, sword raised, trees bent by wind behind him. The Knight of Swords is the mind in full gallop: decisive, brilliant, unstoppable — and sometimes unable to stop: the charge that wins the battle and ploughs through the war.",
+  "shadow": "Aggression, impatience, thoughtless words",
+  "guidance": "Keep the charge, add the compass: decide fast, but check direction first. Before the big strike, one breath — the card's whole lesson lives in that pause. And after the battle, circle back to the people trampled by the speed; the Knight's victories count only if anyone is still beside him at the end."
+ },
+ {
+  "id": "swords-13",
+  "num": 13,
+  "suit": "Swords",
+  "name": "Queen of Swords",
+  "keywords": [
+   "Clear boundaries",
+   "Independence",
+   "Honest perception",
+   "Discernment"
+  ],
+  "meaning": "A stern queen sits on a bare throne, sword raised in one hand, the other extended — clouds part behind her. The Queen of Swords has mastered air inwardly: she sees clearly, thinks independently, and tells the truth without cruelty or apology. No one fools her twice.",
+  "shadow": "Coldness, bitterness, the unforgiving mind",
+  "guidance": "Honour the truth you already see — name it once, cleanly. Keep the hand extended: clarity without warmth is only a sharper loneliness. And let each new person be tried for themselves; the Queen's gift dies the moment the past gets to vote on the present."
+ },
+ {
+  "id": "swords-14",
+  "num": 14,
+  "suit": "Swords",
+  "name": "King of Swords",
+  "keywords": [
+   "Intellectual authority",
+   "Truth",
+   "Ethics",
+   "Final judgement"
+  ],
+  "meaning": "A king on a stone throne raises a sword toward the sky, a butterfly crown above him, trees bent at his back. The King of Swords has mastered air outwardly: the authority of reason — judgement delivered with ethics, power governed by principle, truth spoken as law.",
+  "shadow": "Cold manipulation, cruel logic, rigidity",
+  "guidance": "Decide on principle, not on preference: write the rule you would want applied to you, then apply it. Pair every hard verdict with mercy's question — \"what would the truth look like if I also cared?\". And keep the butterfly close: the King's final test is whether his justice transforms people or merely sorts them."
+ },
+ {
+  "id": "pentacles-01",
+  "num": 1,
+  "suit": "Pentacles",
+  "name": "Ace of Pentacles",
+  "keywords": [
+   "New opportunity",
+   "Seed of wealth",
+   "Tangible offer",
+   "Prosperity"
+  ],
+  "meaning": "A hand offers a golden pentacle above a garden path, lilies and roses in bloom, an archway leading to the mountains. The Ace of Pentacles is the material world's original gift — a real opportunity with roots: the job offer, the seed money, the healthy start, the door that opens onto a garden.",
+  "shadow": "Missed opportunity, poor planning, golden handcuffs",
+  "guidance": "Say yes, then plant properly: read the offer, plan the garden, set the first month's routine. Invest part of the gift immediately — the Ace multiplies through stewardship. And check that this opportunity grows a life you actually want, not just a bigger pot."
+ },
+ {
+  "id": "pentacles-02",
+  "num": 2,
+  "suit": "Pentacles",
+  "name": "Two of Pentacles",
+  "keywords": [
+   "Balance",
+   "Adaptability",
+   "Juggling priorities",
+   "Flexibility"
+  ],
+  "meaning": "A figure dances while two pentacles loop in an endless ribbon, ships riding high waves behind. The Two of Pentacles is the material world in motion: balancing budget and time, work and life, the constant gentle juggling that keeps a modern life airborne.",
+  "shadow": "Overwhelm, dropping the ball, disorganisation",
+  "guidance": "Audit the juggle: which two pentacles actually matter this season? Put one thing down honestly rather than dropping three silently. Build slack into the loop — the card's ships survive because they ride waves, not because the sea is flat. And check in weekly; balance maintained monthly is already wreckage."
+ },
+ {
+  "id": "pentacles-03",
+  "num": 3,
+  "suit": "Pentacles",
+  "name": "Three of Pentacles",
+  "keywords": [
+   "Teamwork",
+   "Craftsmanship",
+   "Skill recognised",
+   "Building together"
+  ],
+  "meaning": "A stonemason consults his plans in a cathedral while two figures hold the measuring line. The Three of Pentacles is the material world dignified: skilled work recognised, collaboration between craftsman, architect and patron — the blueprint finally meeting the hands.",
+  "shadow": "Lack of skill, poor planning, conflict in collaboration",
+  "guidance": "Bring the plan to the people: show your work, name your standards, invite correction early — the Three favours those who check the measurements before the wall rises. Honour every role on the site, including the quiet ones. And when your skill is recognised, bank it: reputation is this card's real currency."
+ },
+ {
+  "id": "pentacles-04",
+  "num": 4,
+  "suit": "Pentacles",
+  "name": "Four of Pentacles",
+  "keywords": [
+   "Security",
+   "Saving",
+   "Control",
+   "Holding on"
+  ],
+  "meaning": "A crowned figure sits hugging a pentacle, one under foot, one on his head, one in his arms — the city beyond him. The Four of Pentacles is the material world held tight: security achieved, resources guarded, and the quiet question of what the guarding is costing.",
+  "shadow": "Greed, materialism, generosity blocked",
+  "guidance": "Run the open-hand audit: what would actually happen if you spent, gave or shared ten percent more? Separate security from fear — the first has a number, the second never does. And practise small loosenings: a gift, a treat, an investment in people; the Four's freedom lives at exactly the speed of its grip."
+ },
+ {
+  "id": "pentacles-05",
+  "num": 5,
+  "suit": "Pentacles",
+  "name": "Five of Pentacles",
+  "keywords": [
+   "Hardship",
+   "Poverty",
+   "Exclusion",
+   "Tough times"
+  ],
+  "meaning": "Two figures hobble through snow past a lit stained-glass window — warmth, help and sanctuary one knock away, and unclaimed. The Five of Pentacles is the material world's winter: financial loss, illness, exclusion, the season when the ground gives nothing back.",
+  "shadow": "Recovery, support accepted, the warmth nearby",
+  "guidance": "Knock on the window: name the hardship to one person this week — the card's whole mercy is that the door is near. Take the smallest available help gratefully; winter ends through doors, not pride. And do the practical triage: one bill, one meal, one night's sleep — Five-of-Pentacles winters are survived in single steps."
+ },
+ {
+  "id": "pentacles-06",
+  "num": 6,
+  "suit": "Pentacles",
+  "name": "Six of Pentacles",
+  "keywords": [
+   "Generosity",
+   "Charity",
+   "Fair exchange",
+   "Giving and receiving"
+  ],
+  "meaning": "A merchant weighs his scales, giving to two kneeling figures — the scales level, the exchange dignified. The Six of Pentacles is the material world shared: generosity with judgement, help given freely, the healthy circulation of wealth, time and knowledge.",
+  "shadow": "Strings attached, debt, power imbalance",
+  "guidance": "Give where it moves you, without purchase — and check, once, that it truly moves you and not your image. Receive without bankrupting yourself in shame; accepting help completes the circuit. And keep the scales level over time: if you always give, or always take, the relationship is quietly becoming the shadow."
+ },
+ {
+  "id": "pentacles-07",
+  "num": 7,
+  "suit": "Pentacles",
+  "name": "Seven of Pentacles",
+  "keywords": [
+   "Patience",
+   "Long-term investment",
+   "Assessment",
+   "Slow growth"
+  ],
+  "meaning": "A farmer leans on his hoe, resting his chin on his hand, watching seven pentacles ripen on the vine. The Seven of Pentacles is the material world slowed down: the mid-point audit — growth is real, but slow, and the waiting itself is now the work.",
+  "shadow": "Impatience, poor returns, reaping the wrong crop",
+  "guidance": "Audit honestly: would I plant this again today? If yes, water and wait — schedule the next review, not the next panic. If no, pull it now; the seven pentacles already grown are yours to keep. And remember this card's pace: most ruin in the material world comes from impatience, not incompetence."
+ },
+ {
+  "id": "pentacles-08",
+  "num": 8,
+  "suit": "Pentacles",
+  "name": "Eight of Pentacles",
+  "keywords": [
+   "Mastery",
+   "Apprenticeship",
+   "Diligence",
+   "Craft"
+  ],
+  "meaning": "A craftsman sits carving pentacle after pentacle, each coin more refined than the last, the finished ones nailed in a row. The Eight of Pentacles is the material world perfected through repetition: skill built coin by coin — the disciplined, unglamorous work that mastery is actually made of.",
+  "shadow": "Perfectionism, lack of focus, cutting corners",
+  "guidance": "Do the reps: choose one skill and give it a daily hour — the Eight promises returns on exactly this currency. Finish the coin before judging it; perfectionism is allowed only after completion. And keep the finished ones visible — the row of nailed pentacles is how motivation survives winter."
+ },
+ {
+  "id": "pentacles-09",
+  "num": 9,
+  "suit": "Pentacles",
+  "name": "Nine of Pentacles",
+  "keywords": [
+   "Self-sufficiency",
+   "Luxury",
+   "Harvest",
+   "Discipline rewarded"
+  ],
+  "meaning": "A well-dressed figure rests in a lush garden, a falcon on her gloved hand, nine pentacles ripe on the vine. The Nine of Pentacles is the material world enjoyed: the harvest of long discipline — financial independence, a beautiful and ordered life, competence as quiet luxury.",
+  "shadow": "Isolation, comfort-addiction, workaholism",
+  "guidance": "Receive on purpose: take one real pleasure from what you have built — a season, a room, a day off that is not disguised work. Keep the garden door open: abundance shared is abundance completed. And let the falcon hunt occasionally — skill kept sharp, comfort kept honest."
+ },
+ {
+  "id": "pentacles-10",
+  "num": 10,
+  "suit": "Pentacles",
+  "name": "Ten of Pentacles",
+  "keywords": [
+   "Legacy",
+   "Inheritance",
+   "Family wealth",
+   "Long-term success"
+  ],
+  "meaning": "An elder in a rich archway surveys his family — child, dogs, generations — ten pentacles arrayed like a coat of arms. The Ten of Pentacles is the material world completed: not just wealth, but legacy — a structure (family, business, institution) that outlasts its founder.",
+  "shadow": "Family disputes, unstable foundations, wealth without warmth",
+  "guidance": "Ask the generational question: what am I building that does not need me to stand? Write the values into the will, not just the assets. Tend the family's warmth as carefully as its accounts — the Ten is complete only when the people under the archway love each other. And teach the heirs the craft, not just the password."
+ },
+ {
+  "id": "pentacles-11",
+  "num": 11,
+  "suit": "Pentacles",
+  "name": "Page of Pentacles",
+  "keywords": [
+   "Student of the material",
+   "New opportunity",
+   "Ambition",
+   "Learning"
+  ],
+  "meaning": "A young figure studies a golden pentacle in a flowering field, hills behind. The Page of Pentacles is the material world's student: a new offer to learn or earn — the scholarship, the first payslip, the apprenticeship, the body finally taken seriously.",
+  "shadow": "Procrastination, get-rich-quick, lack of follow-through",
+  "guidance": "Begin the apprenticeship: enrol, save the first amount, book the session — the Page's power is entirely in starting. Give the new thing a season before judging results; earth answers slowly and then all at once. And write down what you are learning as you go — the Page who keeps notes becomes the master."
+ },
+ {
+  "id": "pentacles-12",
+  "num": 12,
+  "suit": "Pentacles",
+  "name": "Knight of Pentacles",
+  "keywords": [
+   "Methodical progress",
+   "Responsibility",
+   "Routine",
+   "Reliability"
+  ],
+  "meaning": "A knight sits motionless on a stationary horse, contemplating a pentacle in his hand. The Knight of Pentacles is the material world made steady: the slowest knight and the surest — progress through routine, duty without drama, the marathon runner of the court.",
+  "shadow": "Stubbornness, boredom, being stuck in routine",
+  "guidance": "Keep the method — it is rare and valuable — but schedule its review: once a season, ask whether this routine still leads to the pentacle. Add one small variation to break the grey without breaking the method. And remember that his real gift is finish lines; point the steady horse at one worth reaching."
+ },
+ {
+  "id": "pentacles-13",
+  "num": 13,
+  "suit": "Pentacles",
+  "name": "Queen of Pentacles",
+  "keywords": [
+   "Nurturing provider",
+   "Practical warmth",
+   "Abundance at home",
+   "Care"
+  ],
+  "meaning": "A queen gazes at a golden pentacle on her lap, a rabbit at her feet, roses climbing her throne. The Queen of Pentacles has mastered earth inwardly: she makes abundance grow — money, meals, gardens, people — and wraps material care in genuine warmth.",
+  "shadow": "Self-neglect, smothering, material focus over self",
+  "guidance": "Put yourself on the care list: the Queen's first discipline is her own rest and body. Keep warmth in the system — a home is provision plus presence. And let the garden feed you too: receive the comfort you create, or the card's abundance becomes just another job."
+ },
+ {
+  "id": "pentacles-14",
+  "num": 14,
+  "suit": "Pentacles",
+  "name": "King of Pentacles",
+  "keywords": [
+   "Material mastery",
+   "Provider",
+   "Empire builder",
+   "Steady success"
+  ],
+  "meaning": "A king in a vineyard throne holds a pentacle like a sceptre, castle and bulls behind him. The King of Pentacles has mastered earth outwardly: the established provider — wealth built slowly, generously shared, administered with the patience of orchards rather than the hunger of startups.",
+  "shadow": "Greed, workaholism, stubborn materialism",
+  "guidance": "Administer like a steward, not an owner: resources grow when they are tended and shared in the right seasons. Decide what the wealth is for — family, freedom, beauty, legacy — and let that answer steer the empire. And leave the vineyard sometimes: the King's final mastery is knowing the money can sit without him."
  }
 ]

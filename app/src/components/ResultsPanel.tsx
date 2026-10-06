@@ -35,24 +35,38 @@ function formatDate(date: string): string {
   })
 }
 
-/** Full, readable deep-dive block for one Major Arcana card */
-function CardDeepDive({ card }: { card: MajorArcana }) {
+/** Surface-level reading block for one Major Arcana card — the library keeps the deep layers */
+function CardSurface({ card }: { card: MajorArcana }) {
   return (
     <div className="space-y-4 text-left w-full">
+      <div className="flex flex-wrap justify-center gap-1.5">
+        {card.keywords.map((k) => (
+          <span
+            key={k}
+            className="rounded-full border border-amber-200/25 bg-amber-200/[0.06] px-2.5 py-0.5 text-[11px] uppercase tracking-wider text-amber-200/80"
+          >
+            {k}
+          </span>
+        ))}
+      </div>
       <p className="text-indigo-100/90 text-base leading-relaxed">{card.meaning}</p>
-      <p className="text-indigo-200/70 text-sm leading-relaxed">{card.detail}</p>
+      <p className="text-indigo-100/90 text-base leading-relaxed border-l-2 border-amber-300/40 pl-4 font-serif">
+        {card.surface}
+      </p>
       <div className="rounded-2xl border border-rose-300/25 bg-rose-400/[0.07] p-4">
         <h5 className="font-cinzel text-rose-200 text-xs tracking-[0.25em] uppercase mb-2">
           ☾ Shadow side
         </h5>
-        <p className="text-rose-100/90 text-sm leading-relaxed">{card.shadowDetail}</p>
+        <p className="text-rose-100/90 text-sm leading-relaxed">
+          {card.shadow}
+          <span className="text-rose-200/60"> — the full story of this shadow lives in the library.</span>
+        </p>
       </div>
-      <div className="rounded-2xl border border-emerald-300/25 bg-emerald-400/[0.06] p-4">
-        <h5 className="font-cinzel text-emerald-200 text-xs tracking-[0.25em] uppercase mb-2">
-          ✦ Working with this card
-        </h5>
-        <p className="text-emerald-50/85 text-sm leading-relaxed">{card.guidance}</p>
-      </div>
+      <p className="text-indigo-300/60 text-xs leading-relaxed text-center">
+        Beneath this card: its symbols and imagery, the shadow in full, and the practice for
+        working with it —{' '}
+        <RefLink hash={`arcana-${card.num}`}>read the complete entry in the library ↓</RefLink>
+      </p>
     </div>
   )
 }
@@ -179,14 +193,13 @@ export default function ResultsPanel({ date, birth, lifePath, workings, name, sc
       <div className="text-center space-y-3">
         <p className="text-indigo-300/80 text-sm tracking-[0.25em] uppercase">
           {showDate ? (
-            <>Reading for {formatDate(date!)}</>
+            <span>Reading for {formatDate(date!)}</span>
           ) : (
-            <>Name reading</>
+            <span>Name reading</span>
           )}
           {showName && name && nameNumbers && (
             <span className="block mt-1 normal-case tracking-normal font-serif">
-              ✦ {nameNumbers.cleanedName} — Destiny {nameNumbers.expression}
-              {nameNumbers.expressionIsMaster && ' ✦'}
+              {`✦ ${nameNumbers.cleanedName} — Destiny ${nameNumbers.expression}${nameNumbers.expressionIsMaster ? ' ✦' : ''}`}
             </span>
           )}
         </p>
@@ -245,8 +258,7 @@ export default function ResultsPanel({ date, birth, lifePath, workings, name, sc
               >
                 {i === 0 ? 'Personality Card' : pairCards.length === 3 ? 'Middle Card' : 'Soul Card'}
               </Badge>
-              <CardDeepDive card={card} />
-              <RefLink hash={`arcana-${card.num}`}>Full library entry for {card.name} ↓</RefLink>
+              <CardSurface card={card} />
             </div>
           ))}
         </div>
@@ -282,7 +294,7 @@ export default function ResultsPanel({ date, birth, lifePath, workings, name, sc
             <div className="flex flex-wrap justify-center gap-8">
               <div className="flex flex-col items-center gap-4 w-full max-w-md">
                 <TarotCardFace card={tertiary} size="md" />
-                <CardDeepDive card={tertiary} />
+                <CardSurface card={tertiary} />
               </div>
             </div>
           </div>
@@ -342,32 +354,9 @@ export default function ResultsPanel({ date, birth, lifePath, workings, name, sc
 
           <div className="space-y-5">
             <p className="text-indigo-100/90 text-base leading-relaxed">{lpProfile.meaning}</p>
-            <div className="rounded-2xl border border-indigo-400/15 bg-indigo-950/40 p-4">
-              <h4 className="font-cinzel text-indigo-200 text-xs tracking-[0.25em] uppercase mb-2">
-                ⚡ The energy of {lp.number}
-              </h4>
-              <p className="text-indigo-200/75 text-sm leading-relaxed">{lpProfile.energy}</p>
-            </div>
-            <p className="text-indigo-200/70 text-sm leading-relaxed">{lpProfile.detail}</p>
-            {lp.isMaster && lpProfile.masterNote && (
-              <div className="rounded-2xl border border-amber-200/30 bg-amber-200/[0.06] p-4">
-                <h4 className="font-cinzel text-amber-200 text-xs tracking-[0.25em] uppercase mb-2">
-                  ✦ Why a master number shows up here
-                </h4>
-                <p className="text-amber-50/85 text-sm leading-relaxed">{lpProfile.masterNote}</p>
-                <p className="text-amber-200/70 text-xs mt-2">
-                  <RefLink hash={`number-${lp.number}`}>
-                    Read the full entry on {lp.number} in the library ↓
-                  </RefLink>
-                </p>
-              </div>
-            )}
-            <div className="rounded-2xl border border-emerald-300/25 bg-emerald-400/[0.06] p-4">
-              <h4 className="font-cinzel text-emerald-200 text-xs tracking-[0.25em] uppercase mb-2">
-                ✦ Walking this path
-              </h4>
-              <p className="text-emerald-50/85 text-sm leading-relaxed">{lpProfile.advice}</p>
-            </div>
+            <p className="text-indigo-100/90 text-base leading-relaxed border-l-2 border-amber-300/40 pl-4 font-serif">
+              {lpProfile.surface}
+            </p>
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="rounded-2xl border border-emerald-300/20 bg-emerald-400/5 p-4">
                 <h4 className="text-emerald-200 font-cinzel text-sm tracking-widest uppercase mb-2">
@@ -390,6 +379,24 @@ export default function ResultsPanel({ date, birth, lifePath, workings, name, sc
                 </ul>
               </div>
             </div>
+            {lp.isMaster && (
+              <div className="rounded-2xl border border-amber-200/30 bg-amber-200/[0.06] p-4">
+                <h4 className="font-cinzel text-amber-200 text-xs tracking-[0.25em] uppercase mb-2">
+                  ✦ A master number runs through this chart
+                </h4>
+                <p className="text-amber-50/85 text-sm leading-relaxed">
+                  Master numbers carry higher voltage — and higher demand. Why it appeared in your
+                  chart, and what it asks of you, is its own reading:{' '}
+                  <RefLink hash={`number-${lp.number}`}>
+                    the full entry on {lp.number} in the library ↓
+                  </RefLink>
+                </p>
+              </div>
+            )}
+            <p className="text-indigo-300/60 text-xs leading-relaxed">
+              How this path tends to live out over a lifetime, and the practice for walking it well,
+              lives in the library: <RefLink hash={`number-${lp.number}`}>the number {lp.number} ↓</RefLink>
+            </p>
           </div>
         </div>
 
@@ -412,7 +419,7 @@ export default function ResultsPanel({ date, birth, lifePath, workings, name, sc
               {bdProfile.strengths.slice(0, 3).join(', ').toLowerCase()} colour your natural
               temperament.
             </p>
-            <p className="text-indigo-300/60 text-sm max-w-2xl mt-1">{bdProfile.detail}</p>
+            <p className="text-indigo-300/60 text-sm max-w-2xl mt-1">{bdProfile.surface}</p>
             <p className="text-indigo-300/60 text-xs max-w-2xl mt-1">
               <RefLink hash={`number-${lp.birthdayNumber}`}>
                 the number {lp.birthdayNumber} ↓
@@ -456,8 +463,9 @@ export default function ResultsPanel({ date, birth, lifePath, workings, name, sc
             carries the destiny number {nameNumbers?.expression}
             {nameNumbers?.expressionIsMaster && ' ✦'} ({nameProfile?.title.toLowerCase()}): the
             current you add to everything you touch. The vowels whisper what your heart wants (
-            {nameNumbers && <span>soul urge {nameNumbers.soulUrge}</span>}); the consonants shape
-            the first impression you leave ({nameNumbers && <span>personality {nameNumbers.personality}</span>}).
+            {nameNumbers && <span>{`soul urge ${nameNumbers.soulUrge}`}</span>}); the consonants
+            shape the first impression you leave (
+            {nameNumbers && <span>{`personality ${nameNumbers.personality}`}</span>}).
             A name reading shows the instrument; the birth date shows the road — run both together
             for the full chart.
           </p>
@@ -467,32 +475,32 @@ export default function ResultsPanel({ date, birth, lifePath, workings, name, sc
             signature — {primary.keywords.slice(0, 2).join(' and ').toLowerCase()} — into every
             room you enter.
             {pairCards.length > 1 && (
-              <>
+              <span>
                 {' '}
                 Beneath the surface, <span className="text-amber-200">{secondary.name}</span> works
                 as your soul lesson, quietly pulling you toward {secondary.keywords[0].toLowerCase()}.
-              </>
+              </span>
             )}{' '}
             Your Life Path {lp.number} ({lpProfile.title.toLowerCase()}) describes the road
             itself: {lpProfile.strengths[0].toLowerCase()} is the gift,{' '}
             {lpProfile.challenges[0].toLowerCase()} is the test.
             {nameNumbers && nameProfile && (
-              <>
+              <span>
                 {' '}
                 And your name — <span className="text-amber-200">{nameNumbers.cleanedName}</span> —
                 carries the destiny number {nameNumbers.expression}
                 {nameNumbers.expressionIsMaster && ' ✦'} ({nameProfile.title.toLowerCase()}), the
                 current you add to everything you touch. When birth card, life path and destiny
                 number point the same way, the whole chart lights up at once.
-              </>
+              </span>
             )}
             {!nameNumbers && (
-              <>
+              <span>
                 {' '}
                 When the outer card and the inner number agree — when you live your{' '}
                 {primary.keywords[0].toLowerCase()} in the service of your path — the whole chart
                 lights up at once.
-              </>
+              </span>
             )}
           </p>
         )}

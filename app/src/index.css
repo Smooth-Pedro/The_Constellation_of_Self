@@ -183,7 +183,7 @@ html {
 /* Tiny top-left HUD: just the hour and the meeting of the hour.
    Deliberately small so it never competes with the page content. */
 .journey-hud {
-  position: fixed;
+  position: absolute;
   top: 12px;
   left: 14px;
   z-index: 30;

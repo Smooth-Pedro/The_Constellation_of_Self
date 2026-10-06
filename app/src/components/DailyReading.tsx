@@ -4,10 +4,10 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
 import TarotCardFace from '@/components/TarotCardFace'
-import { MAJOR_ARCANA } from '@/lib/tarot'
+import { getAnyCard } from '@/lib/minorArcana'
 
 type DailyResult = {
-  num: number
+  id: string
   name: string
   keywords: string[]
   reading: string
@@ -58,7 +58,7 @@ export default function DailyReading() {
         setState({ kind: 'error', message: data.error ?? 'The cards came back blank.' })
       } else {
         const result: DailyResult = {
-          num: data.num,
+          id: String(data.id ?? data.num),
           name: data.name ?? 'The Arcana',
           keywords: data.keywords ?? [],
           reading: data.reading,
@@ -81,7 +81,7 @@ export default function DailyReading() {
     }
   }
 
-  const card = state.kind === 'ready' ? MAJOR_ARCANA[state.result.num] : null
+  const card = state.kind === 'ready' ? getAnyCard(state.result.id) : null
 
   return (
     <section className="max-w-3xl mx-auto px-6 pb-16" id="daily-reading">
@@ -89,8 +89,8 @@ export default function DailyReading() {
         ✦ Ask the Arcana
       </h2>
       <p className="text-center text-indigo-200/70 mb-8 leading-relaxed">
-        One card is drawn for everyone each day. Hold a question in your mind — or let the
-        card speak freely — and receive its guidance for today.
+        One card is drawn for everyone each day, from the full 78-card deck. Hold a question in
+        your mind — or let the card speak freely — and receive its guidance for today.
       </p>
 
       <Card className="bg-white/[0.04] border-indigo-400/25 backdrop-blur-md shadow-[0_0_60px_-15px_rgba(99,80,220,0.5)]">
@@ -123,7 +123,7 @@ export default function DailyReading() {
                 className="w-full bg-gradient-to-r from-amber-500 to-amber-300 text-indigo-950 font-semibold hover:from-amber-400 hover:to-amber-200 shadow-[0_0_25px_-5px_rgba(251,191,36,0.6)] disabled:opacity-60"
               >
                 <Sparkles className="mr-2 h-4 w-4" />
-                {state.kind === 'loading' ? 'The cards are turning…' : 'Draw the Card of the Day'}
+                <span>{state.kind === 'loading' ? 'The cards are turning…' : 'Draw the Card of the Day'}</span>
               </Button>
             </>
           )}
