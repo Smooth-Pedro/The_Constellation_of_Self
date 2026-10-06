@@ -40,3 +40,8 @@ createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </StrictMode>,
 )
+
+// Signal a successful mount to the boot watchdog in index.html.
+requestAnimationFrame(() => {
+  ;(window as unknown as { __tarotBooted?: boolean }).__tarotBooted = true
+})

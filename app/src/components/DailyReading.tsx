@@ -33,7 +33,14 @@ export default function DailyReading() {
   useEffect(() => {
     try {
       const cached = localStorage.getItem(storageKey(''))
-      if (cached) setState({ kind: 'ready', result: JSON.parse(cached) })
+      if (cached) {
+        const parsed = JSON.parse(cached)
+        // entries cached before Minor Arcana existed have num but no id
+        if (parsed && parsed.id === undefined && parsed.num !== undefined) {
+          parsed.id = String(parsed.num)
+        }
+        setState({ kind: 'ready', result: parsed })
+      }
     } catch {
       /* corrupted cache — just draw again */
     }

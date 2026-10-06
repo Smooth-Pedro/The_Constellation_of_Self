@@ -17,6 +17,36 @@
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <div style="max-width: 32rem; margin: 4rem auto; padding: 0 1.5rem; text-align: center; color: #e8dff5; font-family: Georgia, serif;">
+        <h1 style="letter-spacing: 0.2em;">Tarot Birth Cards &amp; Numerology</h1>
+        <p>
+          This site needs JavaScript to read the cards — it looks like JavaScript is turned off
+          in your browser. Please enable it (or pause extensions that block scripts) and reload.
+        </p>
+      </div>
+    </noscript>
+    <script>
+      // Boot watchdog: if the app has not mounted after 8s, the JS bundle failed to
+      // start on this machine (blocked script, crashing extension, outdated browser).
+      // Replace the blank page with an actionable message instead of silence.
+      setTimeout(function () {
+        var root = document.getElementById('root')
+        if (root && root.childElementCount === 0 && !window.__tarotBooted) {
+          root.innerHTML =
+            '<div style="max-width: 34rem; margin: 5rem auto; padding: 2rem 1.75rem; text-align: center; color: #e8dff5; font-family: Georgia, serif; border: 1px solid rgba(251,191,36,0.35); border-radius: 1.25rem; background: rgba(20,12,40,0.6);">' +
+            '<h1 style="font-size: 1.35rem; letter-spacing: 0.12em; margin-bottom: 1rem; color: #fcd9a0;">✦ The cards did not turn ✦</h1>' +
+            '<p style="line-height: 1.65; margin-bottom: 0.75rem;">The page loaded but the app could not start on this device. Usually one of these fixes it:</p>' +
+            '<ul style="text-align: left; line-height: 1.8; margin: 0 auto 1rem; display: inline-block;">' +
+            '<li><b>Hard refresh</b> — press <b>Ctrl + Shift + R</b> (Mac: Cmd + Shift + R)</li>' +
+            '<li><b>Update your browser</b> — an update is often waiting (check the menu ⋮ → Help)</li>' +
+            '<li><b>Pause extensions</b> — ad-blockers or script blockers can stop the page; try an incognito window</li>' +
+            '</ul>' +
+            '<p style="color: #b9a8dd; font-size: 0.9rem;">If it still fails, tell us your browser and version and we will look deeper.</p>' +
+            '</div>'
+        }
+      }, 8000)
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
