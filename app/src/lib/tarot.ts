@@ -393,7 +393,9 @@ export const MAJOR_ARCANA: MajorArcana[] = [
 ]
 
 export function getCard(num: number): MajorArcana {
-  const card = MAJOR_ARCANA.find((c) => c.num === num)
+  // The Destiny Matrix sky speaks the 1–22 range, where 22 is The Fool (card 0).
+  const idx = num === 22 ? 0 : num
+  const card = MAJOR_ARCANA.find((c) => c.num === idx)
   if (!card) throw new Error(`Unknown Major Arcana number: ${num}`)
   return card
 }

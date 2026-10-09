@@ -1,19 +1,50 @@
-import { useMemo, useState } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState, type ComponentType } from 'react'
 import { Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent } from '@/components/ui/card'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import ResultsPanel, { type ReadingScope } from '@/components/ResultsPanel'
+import type { ReadingScope } from '@/components/ResultsPanel'
+import type { JourneyEntry } from '@/components/JourneyMeetings'
 import FoolsJourney from '@/components/FoolsJourney'
 import DailyReading from '@/components/DailyReading'
-import ThreeCardReading from '@/components/ThreeCardReading'
-import JourneyMeetings, { type JourneyEntry } from '@/components/JourneyMeetings'
 import { SiteNav, LibLink, PairLink } from '@/components/SmartRef'
 import { computeBirthCards } from '@/lib/tarot'
 import { computeLifePath, getNumberProfile } from '@/lib/numerology'
 import { computeNameNumbers } from '@/lib/nameNumerology'
+
+// Below-the-fold / on-demand sections are code-split so the first paint ships
+// a much smaller bundle. The idle preload warms the chunks right after mount,
+// so by the time a user clicks "Reveal My Reading" the code is already local.
+/**
+ * lazy with deploy resilience: a tab that outlives a deployment references
+ * chunk files that no longer exist; a failed chunk fetch would otherwise
+ * crash the tree. Reload once (guarded against loops) to pick up the new
+ * index.html and chunk map.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function lazyReload<T extends ComponentType<any>>(
+  factory: () => Promise<{ default: T }>,
+) {
+  return lazy(() =>
+    factory().catch((err: unknown) => {
+      try {
+        if (!sessionStorage.getItem('chunk-reload-once')) {
+          sessionStorage.setItem('chunk-reload-once', String(Date.now()))
+          location.reload()
+        }
+      } catch {
+        /* private mode: fall through to the normal error */
+      }
+      throw err
+    }),
+  )
+}
+
+const ResultsPanel = lazyReload(() => import('@/components/ResultsPanel'))
+const ThreeCardReading = lazyReload(() => import('@/components/ThreeCardReading'))
+const JourneyMeetings = lazyReload(() => import('@/components/JourneyMeetings'))
 
 type ScopeOption = {
   value: ReadingScope
@@ -50,6 +81,18 @@ export default function Home() {
 
   const needsDate = scope === 'date' || scope === 'all'
   const needsName = scope === 'name' || scope === 'all'
+
+  // Warm the lazy chunks right after first paint so an eventual click on
+  // "Reveal My Reading" never waits on the network.
+  useEffect(() => {
+    const w = window as unknown as { requestIdleCallback?: (cb: () => void) => number }
+    const schedule = w.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1200))
+    schedule(() => {
+      import('@/components/ResultsPanel')
+      import('@/components/JourneyMeetings')
+      import('@/components/ThreeCardReading')
+    })
+  }, [])
 
   /** The user's cards, shown as "The Fool Meets Your Cards" after the results */
   const journeyEntries = useMemo<JourneyEntry[]>(() => {
@@ -235,26 +278,36 @@ export default function Home() {
 
       {/* ── Results ──────────────────────────────────────── */}
       {result && (
-        <main id="results" className="px-4 sm:px-6 pb-10 scroll-mt-8">
-          <ResultsPanel
-            date={result.date}
-            name={result.name}
-            birth={result.birth ?? undefined}
-            lifePath={result.lifePath ?? undefined}
-            workings={result.workings}
-            scope={result.scope}
-          />
-          <div className="max-w-5xl mx-auto">
-            <JourneyMeetings entries={journeyEntries} />
-          </div>
-        </main>
+        <Suspense
+          fallback={
+            <p className="text-center py-16 font-cinzel text-amber-100/80 tracking-[0.25em] animate-pulse">
+              ✦ turning the cards ✦
+            </p>
+          }
+        >
+          <main id="results" className="px-4 sm:px-6 pb-10 scroll-mt-8">
+            <ResultsPanel
+              date={result.date}
+              name={result.name}
+              birth={result.birth ?? undefined}
+              lifePath={result.lifePath ?? undefined}
+              workings={result.workings}
+              scope={result.scope}
+            />
+            <div className="max-w-5xl mx-auto">
+              <JourneyMeetings entries={journeyEntries} />
+            </div>
+          </main>
+        </Suspense>
       )}
 
       {/* ── AI daily reading ─────────────────────────────── */}
       <DailyReading />
 
       {/* ── Three-card readings ──────────────────────────── */}
-      <ThreeCardReading />
+      <Suspense fallback={null}>
+        <ThreeCardReading />
+      </Suspense>
 
       {/* ── How it works ─────────────────────────────────── */}
       <section className="max-w-3xl mx-auto px-6 pb-20">

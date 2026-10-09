@@ -178,8 +178,9 @@ export const CARD_DOMAINS: Record<number, DomainNotes> = {
   },
 }
 
-export function getDomainNotes(num: number): DomainNotes {
-  return CARD_DOMAINS[num]
+export function getDomainNotes(num: number): DomainNotes | undefined {
+  // 22 in the 1–22 sky range is The Fool, stored under key 0.
+  return CARD_DOMAINS[num === 22 ? 0 : num]
 }
 
 export interface LinePosition {

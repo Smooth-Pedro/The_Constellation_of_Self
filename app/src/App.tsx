@@ -1,12 +1,53 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect, type ComponentType } from 'react'
 import { Routes, Route, useLocation } from 'react-router'
 import Home from './pages/Home'
-import LibraryPage from './pages/LibraryPage'
-import PairsPage from './pages/PairsPage'
-import AstrologyPage from './pages/AstrologyPage'
-import SynastryPage from './pages/SynastryPage'
-import AstroLibraryPage from './pages/AstroLibraryPage'
-import NumerologyLibraryPage from './pages/NumerologyLibraryPage'
+
+/**
+ * lazy with deploy resilience: a user whose tab outlives a deployment holds
+ * references to chunk files that no longer exist. A failed chunk fetch then
+ * white-screens the app; reloading once picks up the fresh index.html and
+ * the new chunk map. sessionStorage prevents a reload loop if the reload
+ * itself fails.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function lazyReload<T extends ComponentType<any>>(
+  factory: () => Promise<{ default: T }>,
+) {
+  return lazy(() =>
+    factory().catch((err: unknown) => {
+      try {
+        if (!sessionStorage.getItem('chunk-reload-once')) {
+          sessionStorage.setItem('chunk-reload-once', String(Date.now()))
+          location.reload()
+        }
+      } catch {
+        /* private mode: fall through to the normal error */
+      }
+      throw err
+    }),
+  )
+}
+
+// Everything below the home page is code-split: a visitor who never leaves
+// the front page never downloads the library, astrology engine or synastry
+// data. This is the biggest win for the "black screen on slow devices" report.
+const LibraryPage = lazyReload(() => import('./pages/LibraryPage'))
+const PairsPage = lazyReload(() => import('./pages/PairsPage'))
+const AstrologyPage = lazyReload(() => import('./pages/AstrologyPage'))
+const SynastryPage = lazyReload(() => import('./pages/SynastryPage'))
+const AstroLibraryPage = lazyReload(() => import('./pages/AstroLibraryPage'))
+const NumerologyLibraryPage = lazyReload(() => import('./pages/NumerologyLibraryPage'))
+
+/** Lightweight full-screen fallback while a route chunk streams in. */
+function RouteFallback() {
+  return (
+    <div className="min-h-screen starfield flex items-center justify-center px-6">
+      <p className="font-cinzel text-amber-100/80 tracking-[0.25em] animate-pulse">
+        ✦ turning the cards ✦
+      </p>
+    </div>
+  )
+}
 
 /** Smooth-scroll to the hash target after a route change; top otherwise */
 function ScrollManager() {
@@ -99,16 +140,18 @@ export default function App() {
     <>
       <ScrollManager />
       <ArrowScroll />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/library" element={<LibraryPage />} />
-        <Route path="/pairs" element={<PairsPage />} />
-        <Route path="/astrology" element={<AstrologyPage />} />
-        <Route path="/synastry" element={<SynastryPage />} />
-        <Route path="/astrology-library" element={<AstroLibraryPage />} />
-        <Route path="/numerology-library" element={<NumerologyLibraryPage />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/library" element={<LibraryPage />} />
+          <Route path="/pairs" element={<PairsPage />} />
+          <Route path="/astrology" element={<AstrologyPage />} />
+          <Route path="/synastry" element={<SynastryPage />} />
+          <Route path="/astrology-library" element={<AstroLibraryPage />} />
+          <Route path="/numerology-library" element={<NumerologyLibraryPage />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Suspense>
     </>
   )
 }

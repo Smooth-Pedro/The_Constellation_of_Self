@@ -17,6 +17,7 @@ import {
   getDomainNotes,
   NUMBER_LOVE_NOTES,
   type Constellation,
+  type DomainNotes,
   type LoveShade,
 } from '@/lib/constellation'
 
@@ -33,9 +34,11 @@ const SHADE_STYLES: Record<LoveShade, { chip: string; label: string }> = {
 }
 
 function ArcLink({ num, children }: { num: number; children: ReactNode }) {
+  // 22 is The Fool in the sky's 1–22 range; the library indexes it as 0.
+  const anchor = num === 22 ? 0 : num
   return (
     <Link
-      to={`/library#arcana-${num}`}
+      to={`/library#arcana-${anchor}`}
       className="text-amber-300/90 underline decoration-amber-300/30 underline-offset-4 hover:text-amber-200 hover:decoration-amber-200/70 transition-colors"
     >
       {children}
@@ -201,7 +204,9 @@ export default function ConstellationPanel({ date, birth, lifePath }: Props) {
   const loveNums = Array.from(
     new Set([birth.primary, birth.secondary, ...loveLine.positions.map((p) => p.num)]),
   )
-  const loveCards = loveNums.map((num) => ({ num, notes: getDomainNotes(num) }))
+  const loveCards = loveNums
+    .map((num) => ({ num, notes: getDomainNotes(num) }))
+    .filter((c): c is { num: number; notes: DomainNotes } => c.notes !== undefined)
   const devotion = loveCards.filter((c) => c.notes.shade === 'devotion')
   const storm = loveCards.filter((c) => c.notes.shade === 'storm')
   const desireCard = getCard(loveLine.positions[1].num)
@@ -330,7 +335,7 @@ export default function ConstellationPanel({ date, birth, lifePath }: Props) {
                     </p>
                     <p className="font-mono text-[10px] text-indigo-300/50">{pos.workings}</p>
                     <p className="text-indigo-200/75 text-sm leading-relaxed">
-                      {line.key === 'love' ? notes.love : notes.work}
+                      {notes ? (line.key === 'love' ? notes.love : notes.work) : ''}
                     </p>
                   </div>
                 )

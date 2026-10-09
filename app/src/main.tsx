@@ -42,6 +42,9 @@ createRoot(document.getElementById('root')!).render(
 )
 
 // Signal a successful mount to the boot watchdog in index.html.
-requestAnimationFrame(() => {
+// setTimeout, not requestAnimationFrame: rAF never fires in occluded or
+// battery-saver tabs, which made the watchdog think the boot failed even
+// though the app was running fine.
+setTimeout(() => {
   ;(window as unknown as { __tarotBooted?: boolean }).__tarotBooted = true
-})
+}, 0)

@@ -16,7 +16,24 @@
     />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Boot splash: visible the instant the HTML arrives, replaced by React on mount.
+           Slow connections used to show a bare dark page for many seconds while the
+           JS bundle downloaded — this makes the wait legible instead of "black screen". -->
+      <div
+        id="boot-splash"
+        style="position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:#160e2a;color:#e8dff5;font-family:Georgia,serif;text-align:center;"
+      >
+        <div style="font-size:2rem;letter-spacing:0.5em;color:#fcd9a0;animation:tarotPulse 1.6s ease-in-out infinite;">☾ ✦ ☀</div>
+        <div style="letter-spacing:0.3em;font-size:0.95rem;color:#b9a8dd;">turning the cards…</div>
+      </div>
+      <style>
+        @keyframes tarotPulse {
+          0%, 100% { opacity: 0.55; transform: scale(0.98); }
+          50% { opacity: 1; transform: scale(1.04); }
+        }
+      </style>
+    </div>
     <noscript>
       <div style="max-width: 32rem; margin: 4rem auto; padding: 0 1.5rem; text-align: center; color: #e8dff5; font-family: Georgia, serif;">
         <h1 style="letter-spacing: 0.2em;">Tarot Birth Cards &amp; Numerology</h1>
@@ -27,25 +44,51 @@
       </div>
     </noscript>
     <script>
-      // Boot watchdog: if the app has not mounted after 8s, the JS bundle failed to
-      // start on this machine (blocked script, crashing extension, outdated browser).
-      // Replace the blank page with an actionable message instead of silence.
-      setTimeout(function () {
+      // Collect uncaught errors so the watchdog card (and support reports) can
+      // name the real culprit instead of guessing.
+      window.__tarotErrors = []
+      window.addEventListener('error', function (e) {
+        window.__tarotErrors.push(String((e.error && e.error.stack) || e.message || e))
+        if (window.__tarotErrors.length > 5) window.__tarotErrors.shift()
+      })
+      window.addEventListener('unhandledrejection', function (e) {
+        window.__tarotErrors.push('unhandled rejection: ' + String((e.reason && e.reason.stack) || e.reason))
+        if (window.__tarotErrors.length > 5) window.__tarotErrors.shift()
+      })
+      // Boot watchdog. Two failure shapes are covered:
+      //  1. the bundle never started (blocked script, crashing extension, old browser)
+      //     → the splash is still showing at 10s and __tarotBooted was never set;
+      //  2. React mounted and then crashed (uncaught error empties the root)
+      //     → __tarotBooted is set but the root has no children at check time.
+      // Either way, replace silence with an actionable message.
+      function tarotBootCheck() {
         var root = document.getElementById('root')
-        if (root && root.childElementCount === 0 && !window.__tarotBooted) {
-          root.innerHTML =
-            '<div style="max-width: 34rem; margin: 5rem auto; padding: 2rem 1.75rem; text-align: center; color: #e8dff5; font-family: Georgia, serif; border: 1px solid rgba(251,191,36,0.35); border-radius: 1.25rem; background: rgba(20,12,40,0.6);">' +
-            '<h1 style="font-size: 1.35rem; letter-spacing: 0.12em; margin-bottom: 1rem; color: #fcd9a0;">✦ The cards did not turn ✦</h1>' +
-            '<p style="line-height: 1.65; margin-bottom: 0.75rem;">The page loaded but the app could not start on this device. Usually one of these fixes it:</p>' +
-            '<ul style="text-align: left; line-height: 1.8; margin: 0 auto 1rem; display: inline-block;">' +
-            '<li><b>Hard refresh</b> — press <b>Ctrl + Shift + R</b> (Mac: Cmd + Shift + R)</li>' +
-            '<li><b>Update your browser</b> — an update is often waiting (check the menu ⋮ → Help)</li>' +
-            '<li><b>Pause extensions</b> — ad-blockers or script blockers can stop the page; try an incognito window</li>' +
-            '</ul>' +
-            '<p style="color: #b9a8dd; font-size: 0.9rem;">If it still fails, tell us your browser and version and we will look deeper.</p>' +
-            '</div>'
-        }
-      }, 8000)
+        if (!root) return
+        // Never wipe a live app: if the root already holds real UI (form
+        // controls, nav, headings), the app mounted fine — an unset boot flag
+        // in that state just means a throttled timer, not a failed boot.
+        if (root.querySelector('input, button, nav, main, header, h1')) return
+        var mounted = window.__tarotBooted && root.childElementCount > 0
+        if (mounted) return
+        root.innerHTML =
+          '<div style="max-width: 34rem; margin: 5rem auto; padding: 2rem 1.75rem; text-align: center; color: #e8dff5; font-family: Georgia, serif; border: 1px solid rgba(251,191,36,0.35); border-radius: 1.25rem; background: rgba(20,12,40,0.6);">' +
+          '<h1 style="font-size: 1.35rem; letter-spacing: 0.12em; margin-bottom: 1rem; color: #fcd9a0;">✦ The cards did not turn ✦</h1>' +
+          '<p style="line-height: 1.65; margin-bottom: 0.75rem;">The page loaded but the app could not start on this device. Usually one of these fixes it:</p>' +
+          '<ul style="text-align: left; line-height: 1.8; margin: 0 auto 1rem; display: inline-block;">' +
+          '<li><b>Hard refresh</b> — press <b>Ctrl + Shift + R</b> (Mac: Cmd + Shift + R)</li>' +
+          '<li><b>Update your browser</b> — an update is often waiting (check the menu ⋮ → Help)</li>' +
+          '<li><b>Pause extensions</b> — ad-blockers or script blockers can stop the page; try an incognito window</li>' +
+          '</ul>' +
+          '<p style="color: #b9a8dd; font-size: 0.9rem;">Still stuck? Note your browser and version and we will look deeper.</p>' +
+          (window.__tarotErrors && window.__tarotErrors.length
+            ? '<pre style="text-align:left;white-space:pre-wrap;font-size:0.7rem;color:#8f7fb8;background:rgba(0,0,0,0.35);padding:0.75rem;border-radius:0.5rem;max-height:9rem;overflow:auto;">' +
+              window.__tarotErrors.join('\n\n').replace(/</g, '&lt;') +
+              '</pre>'
+            : '') +
+          '</div>'
+      }
+      setTimeout(tarotBootCheck, 10000)
+      setTimeout(tarotBootCheck, 30000)
     </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
